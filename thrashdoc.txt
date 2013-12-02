@@ -1,0 +1,62 @@
+//{controller}/{action}/{id}
+//(?P<controller>[^\/]+)\/*(?P<action>[^\/]+)\/*(?P<id>[^\/]+)*)
+
+//$m=explode("/","{controller}/{action}/{id}"); 
+//
+//function replacefnc($item){
+//
+//	return  sprintf("(?P<%s>%s)",$item[1],'[^\/]+');
+//	$regex = "#\{((?:[^{]|\[(?!/?})|(?R))+)\}#";
+//	
+//};
+//
+//$expression = preg_replace_callback('|{([\w]++)}|', "replacefnc", "{controller}\/{action}\/{id}");
+//
+////var_dump( $expression);
+//
+//function parseUrlTagsRecursive($input)
+//{
+//	$regex = "#\{((?:[^{]|\[(?!/?}])|(?R))+)\}#";
+//	if (is_array($input)) {
+//		$input = sprintf("(?P<%s>%s)",$input[1],'[^\/]+');
+//	}
+//	return preg_replace_callback($regex, 'parseUrlTagsRecursive', $input);
+//}
+//
+//
+//
+//$input ="{controller}\/*{action}\/*{id}"; //"plain [indent] deep [indent] deeper [/indent] deep [/indent] plain";
+//
+//function parseTagsRecursive($input)
+//{
+//
+//	$regex = '#\[indent]((?:[^[]|\[(?!/?indent])|(?R))+)\[/indent]#';
+//
+//	if (is_array($input)) {
+//		$input = '<div style="margin-left: 10px">'.$input[1].'</div>';
+//	}
+//
+//	return preg_replace_callback($regex, 'parseTagsRecursive', $input);
+//}
+//
+//$output = parseUrlTagsRecursive($input);
+//$expression = '/('.$output.'*)/';
+//var_dump( $output);
+//preg_match($expression ,'controlle2r/action2',$matches);
+//var_dump($matches);
+
+
+//$express = array();
+//foreach($m as $key => $value)
+//{
+//	$item = str_replace(array('{','}'),array('','') ,$value );
+//	array_push($express,sprintf("(?P<%s>%s)",$item,'[^\/]+'));
+//	
+//}
+//$express = join("\/*",$express);
+//$express = '/('.$express.'*)/';
+//var_dump($express);
+//
+//preg_match($express,'controlle2r/action2',$matches);
+//var_dump($matches);
+//var_dump(headers_sent());
