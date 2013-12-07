@@ -25,6 +25,7 @@ abstract class Controller extends AbstractController implements IController  {
 		$this->ViewData = new ViewData();
 		//$this->ActionExecuted();
 		//$this->ActionExecuting();
+
 		return $this;
 	}
 	
@@ -68,10 +69,6 @@ abstract class Controller extends AbstractController implements IController  {
 			return $Action;
 			
 		}catch(\ReflectionException $e){
-			
-			\Application::ConsoleLog($e);
-			
-			header("Page Not Found",404);
 
 			throw OrionException::Handler(new Exception\OrionControllerActionException($this->Controller,$this->Name,$this->Context));
 		}

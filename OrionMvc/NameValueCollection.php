@@ -2,10 +2,10 @@
 namespace  OrionMvc;
 use ArrayObject;
 
-abstract class NameValueCollection  extends NameObjectCollection
+class NameValueCollection  extends NameObjectCollection
 {
 	protected $data;
-	public $isReadOnly = false;
+	public $IsReadOnly = false;
 
 	public function __construct(array $data = null)
 	{

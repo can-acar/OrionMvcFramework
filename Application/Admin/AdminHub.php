@@ -1,7 +1,7 @@
 <?php
 namespace Application\Admin;
 
-class AdminHub:Hub
+class AdminHub extends Hub
 {
 	
 	public function OnConnected()
@@ -9,6 +9,12 @@ class AdminHub:Hub
 		
 		
 		parent::OnConnected();
+	}
+	
+	public function OnDisconnected()
+	{
+		
+		parent::OnDisConnected();
 	}
 }
 

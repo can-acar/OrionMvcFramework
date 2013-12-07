@@ -4,6 +4,6 @@ use OrionMvc;
 
 class  ErrorException extends \ErrorException 
 {
-
+   
 }
 ?>

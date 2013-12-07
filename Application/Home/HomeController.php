@@ -53,7 +53,7 @@ class HomeController extends OrionMvc\Controller {
 
 		$this->Response->Send();
         
-		\Application::ConsoleLog($this->Request->Cookies);
+		//\Application::ConsoleLog($this->Request->Cookies);
         
 		
 		//\Application::Debug($this);

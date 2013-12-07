@@ -91,8 +91,8 @@ class OrionException  {
 		if (0 === error_reporting()) { return false; }
 		
 		
-		$message = "<pre><p>{$Exception->getMessage()} [{$Exception->getFile()}] ({$Exception->getLine()})</p></pre>";
-		//$message = "<pre><p>{$Exception->getMessage()}</p></pre>";
+		//$message = "<pre><p>{$Exception->getMessage()} [{$Exception->getFile()}] ({$Exception->getLine()})</p></pre>";
+		$message = "<pre><p>{$Exception->getMessage()}</p></pre>";
 			
 		exit($message);
 	}

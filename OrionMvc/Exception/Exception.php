@@ -1,6 +1,6 @@
 <?php
 namespace OrionMvc\Exception;
-
+use OrionMvc;
 /**
  * class Exception
  *
@@ -8,6 +8,6 @@ namespace OrionMvc\Exception;
  *
  * @author:
 */
-abstract class  Exception  extends \Exception {}
+ class  Exception  extends \Exception {}
 
 ?>

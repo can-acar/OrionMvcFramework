@@ -8,9 +8,7 @@ abstract class Hub extends HubContext implements IHub{
 	
 	
 	
-	public function __construct(){
-		 		
-	}
+	function __construct(){}
 	
 	abstract public function OnConnect();
 	
@@ -21,6 +19,20 @@ abstract class Hub extends HubContext implements IHub{
 }
 
 abstract class HubContext extends \ArrayObject{
+	
+	function OnConnected()
+	{
+			
+		$this->OnConnected();
+	}
+	
+	
+	function OnDisconnected()
+	{
+		
+		$this->OnDisconnected();
+		
+	}
 	
 	
 	
