@@ -53,7 +53,8 @@ class HttpCookieCollection extends NameObjectCollection
     {
         $this->_All = null;
         $this->_AllKeys = null;
-        if($appand){
+        if($appand)
+        {
             if(!$cookie->FromHeader)
             {
                 $cookie->Added  =   true;

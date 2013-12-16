@@ -23,25 +23,12 @@ $Load = new OrionMvc\Autoloader;
 
 $App = \Application::GetInstance();
 
-
-
-$App->Event->add('Orion.onLoad',$Load);
-
-$App->Event->add('Orion.Exception',$Exception);
-
-$App->Event->add("Orion.onShutDown",function(){ echo "simple test";});
-
 $Context = new OrionMvc\HttpContext(new OrionMvc\HttpRequest,new OrionMvc\HttpResponse ); // listen server
 
-$App->Event->add('Orion.Context',$Context);
+$App->Configration = new Configration\Config($App);
 
+$App->Dispatcher->Dispatch($Context,$App);
 
-
-$App->Configration = new Configration\Config();
-
-$App->Dispatcher->Dispatch($Context);
-
-$App->Event->get("Orion.onShutDown");
-
-
+$App->Event->modul->onActionResult($App);
+\Application::ConsoleLog($App->Event->modul);
 ?>

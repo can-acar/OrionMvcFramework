@@ -2,6 +2,7 @@
 
 namespace OrionMvc;
 
+use OrionMvc;
 use Exception;
 
 /**
@@ -120,26 +121,12 @@ class OrionException  {
 		}
 		array_shift($trace);
 		
-		$Exception =	new \ErrorException($ErrorMessage, 0, $ErrorCode, $ErrorFile, $ErrorLine);
+		$message = "<pre><p>{($ErrorMessage)} [{$ErrorFile}] ({$ErrorLine})</p></pre>";
+		
+		
+		$Exception =	new \ErrorException($message, 0, $ErrorCode, $ErrorFile, $ErrorLine);
 		$this->ExceptionHandler($Exception);
-		return true;
-		
-		/*
-			$ErrorHandler = new \stdClass;
-			$ErrorHandler->Code 	= $ErrorCode;
-			$ErrorHandler->Message 	= $ErrorMessage;
-			$ErrorHandler->File		= $ErrorFile;
-			$ErrorHandler->Line		= $ErrorLine;
 				
-			$ExceptionJson = json_encode($ErrorHandler);
-	
-			//$this->Context->Response->SendJson($ExceptionJson);
-				
-			$this->Context->Response->Headers->SetHeader('Content-Type' , 'application/json; charset=utf-8');
-			$this->Context->Response->SetBody($ExceptionJson);		
-			$this->Context->Response->Send();
-		*/
-		
 		exit;
 		
 	}
@@ -188,7 +175,9 @@ class OrionException  {
 			
 			array_shift($trace);*/
 			
-			$FatalException = new \ErrorException($error['message'], 0, $error['type'], $error['file'], $error['line']);
+			$message = "<pre><p>{$error['message']} [{$error['file']}] ({$error['line']})</p></pre>";
+			
+			$FatalException = new \ErrorException($message, 0, $error['type'], $error['file'], $error['line']);
 			
 			throw	$this->ExceptionHandler($FatalException);
 			
@@ -220,17 +209,12 @@ class OrionException  {
 	 * @return mixed This is the return value description
 	 *
 	 */	
-	public static function Handler(\Exception $e)
+	public static function Handler(Exception $e)
 	{
 		return	self::$Instance->ExceptionHandler($e);
 	}
 	
-	public function __clone()
-	{
-	}
-	private function __wakeup()
-	{
-	}
+	
 	
 }
 

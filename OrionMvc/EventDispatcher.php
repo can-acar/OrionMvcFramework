@@ -23,7 +23,7 @@ class EventDispatcher implements IEventDispathcer  {
 	 */
 	public function __construct()
 	{
-		return $this;
+	
 	}
 	
 	
@@ -43,8 +43,11 @@ class EventDispatcher implements IEventDispathcer  {
 	public function add($name, $triggersMethod = null)
 	{
 	
-		if (!isset($this->_events[$name])) {
+		if (!isset($this->_events[$name])) 
+		{
+			
 			$this->_events[$name] = new Event($triggersMethod);
+		
 		}
 		return $this->_events[$name];
 	}
@@ -183,6 +186,8 @@ interface IEventDispathcer
 	 *
 	 */	
 	public function getNames();
+	
+	
 }
 
 

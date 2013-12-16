@@ -17,10 +17,12 @@ class Event implements \SplSubject  {
 	 * @access	public
 	 * @return	void
 	 */
-	public function __construct()
+	function __construct()
 	{
 		$this->_observers = new \SplObjectStorage();
+	
 	}
+		
 	
 	/**
 	 * Wrapper for the attach method, allowing for the addition

@@ -119,7 +119,7 @@ class Application
             
 			$this->Event			 = new OrionMvc\EventDispatcher();
 			
-			$this->Dispatcher        = new OrionMvc\Dispatcher();
+			$this->Dispatcher        = new OrionMvc\Dispatcher($this);
 			
 			$this->ControllerFactory = new OrionMvc\ControllerFactory();
 

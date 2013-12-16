@@ -20,9 +20,46 @@ class ExceptionRender extends \ArrayObject {
 		var_dump($ExceptionCollection);
 	}
 	
-	public function Render()
+	public function Render($view)
 	{
+		$level = ob_get_level();
+
+
+		$this->__f = \Application::FindFile($view,ABSPATH.'OrionMvc'.DIRECTORY_SEPARATOR.'Exeption'.DIRECTORY_SEPARATOR.'Template'.DIRECTORY_SEPARATOR); 
 		
+		if (file_exists($this->__f) == false) {
+			$_m = sprintf("<p>%s %s template not found!</p>",$path,$view);
+			echo($_m);
+			
+			return false;
+		}
+		
+		ob_start();
+		
+	/*	if($this->ViewData)
+		{
+			extract($this->ViewData,EXTR_SKIP);
+		}
+		*/
+
+		try{
+			 
+			require($this->__f);
+
+		}catch(\Exception $e)
+		{
+			
+			while (ob_get_level() > $level)
+			{
+                ob_end_clean();
+            }
+			
+			throw	OrionException::Handler(new ErrorException("View Rendering Exception!."));
+			
+			
+		}
+
+		return ob_get_clean();
 	}
 	
 	

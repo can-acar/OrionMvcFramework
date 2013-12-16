@@ -7,7 +7,7 @@ namespace OrionMvc;
  *
  * @author:
 */
-interface IModule 
+interface IModule
 {
 
 	

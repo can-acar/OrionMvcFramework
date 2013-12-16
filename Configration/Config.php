@@ -16,12 +16,13 @@ class Config  {
 	 *
 	 * @param 
 	 */
-	public function __construct()
+	public function __construct(\Application $application)
 	{
 		$List = array(
-			"Router" => new RouterConfig(),
-			"Site"	 => new BaseConfig(),
-			"Cache"  => new CacheConfig()
+			"Router" => new RouterConfig($application),
+			"Site"	 => new BaseConfig($application),
+			"Cache"  => new CacheConfig($application),
+			"Module" => new ModuleConfig($application) 
 				
 		);
 		

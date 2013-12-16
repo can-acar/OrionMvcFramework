@@ -31,7 +31,10 @@ class HomeController extends OrionMvc\Controller {
 		// $this->Request->Send();
 		$cookie = new OrionMvc\HttpCookie();
 		$cookie->name = "username";
-		$cookie->value = "can_acar3";
+		$cookie->value = "can acar _";
+		$cookie2 = new OrionMvc\HttpCookie();
+		$cookie2->name = "userdata";
+		$cookie2->value = "user data";
 		//  $this->Response->Cookies->Add($cookie);
 		//$this->Request->SendRequest();
 		//\Application::ConsoleLog($this->Request);
@@ -48,12 +51,12 @@ class HomeController extends OrionMvc\Controller {
 		//trigger_error("Insufficient arguments", E_USER_ERROR);
       //  $this->Request->Cookies->Reset();
      //   $this->Response->Cookies->Reset();  
-		$this->Request->AddResponseCookie($cookie);
-        $this->Response->Cookies->AddCookie($cookie,true);
-
-		$this->Response->Send();
+		$this->Request->Cookies->AddCookie($cookie);
+		$this->Request->Cookies->AddCookie($cookie2);
+        //$this->Response->Cookies->AddCookie($cookie,true);
+        //$this->Request->SendCookie();
+		
         
-		//\Application::ConsoleLog($this->Request->Cookies);
         
 		
 		//\Application::Debug($this);

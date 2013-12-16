@@ -36,15 +36,18 @@ class View implements IView  {
 			return false;
 		}
 		
+		ob_start();
+		
+		
 		if($this->ViewData)
 		{
-			extract($this->ViewData,EXTR_SKIP);
+			extract($this->ViewData,EXTR_SKIP | EXTR_REFS);
 		}
 		
 		
 		
-		//ob_start();
-		extract($this->ViewData,EXTR_SKIP | EXTR_REFS);
+	
+		//extract($this->ViewData,EXTR_SKIP | EXTR_REFS);
 		try{
 			 
 			require($this->__f);

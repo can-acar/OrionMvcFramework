@@ -9,7 +9,7 @@ use OrionMvc;
  * @author:
 */
 
-class OrionControllerActionException extends \Exception {
+class OrionControllerActionException extends Exception {
 
 	/**
 	 * OrionControllerActionException constructor
@@ -17,14 +17,15 @@ class OrionControllerActionException extends \Exception {
 	 * @param 
 	 */
 	public function __construct($Controller,	$action,	OrionMvc\HttpContext $context) {
+        
+       
+        $context->Request->Headers->Add("HTTP/1.0 404 Not Found",404);
+     
+        $context->Request->Contents = " {$action} action was not found in {$Controller} controller ";
 		
+        
+        $context->Request->Send();	
 		
-		$context->Request->Headers->Add("HTTP/1.0 404 Not Found",404);
-		$context->Request->Send();	
-		
-		$this->code = 404;
-		
-		$this->message =" {$action} action was not found in {$Controller} controller ";
 	
 	}
 }

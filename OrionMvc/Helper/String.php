@@ -1,7 +1,7 @@
 <?php
 namespace OrionMvc\Helper;
 
-abstract class String
+abstract class _String
 {
 	function __construct() {
 		

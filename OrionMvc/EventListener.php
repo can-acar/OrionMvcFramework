@@ -7,7 +7,7 @@ namespace OrionMvc;
  *
  * @author:
 */
-abstract class EventListener implements \SplObserve  {
+abstract class EventListener implements \SplObserver  {
 
 	// holds all states
 	private $_states = array();

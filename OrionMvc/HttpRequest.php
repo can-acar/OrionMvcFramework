@@ -283,137 +283,6 @@ class HttpRequest  implements IHttpRequest
 	}
 	
 	
-	/**
-	 * HttpRequest::__get()
-	 * 
-	 * @param mixed $Property
-	 * @return
-	 */
-	public function __getx($Property){
-		switch($Property){
-			case 'AcceptTypes':
-				return $this->AcceptTypes;
-				break;
-			case 'ApplicationPath':
-				$this->ApplicationPath =	$_SERVER['DOCUMENT_ROOT'];
-				return $this->ApplicationPath;
-				break;
-			case 'Browser':
-				$this->Browser =			$this->ParseBrowserInfo();
-				return $this->Browser;
-				break;
-			case 'ContentEncoding':
-				$this->ContentEncoding =	$this->GetEncode();
-				return $this->ContentEncoding;
-				break;
-			case 'ContentLength':
-				$this->ContentLength =		$this->GetLength();
-				return $this->ContentLength;
-				break;
-			case 'ContentType':
-				$this->ContentType  =       $this->GetType();
-				return $this->ContentType;
-				break;
-			case 'Cookies':
-				
-				$this->EnsureCookies();
-				
-				$this->Cookies->CreateCookieFromString( $this->ParseValueHeaders('cookie'));
-				
-				return $this->Cookies;
-				break;
-			case 'CurrentExecutionFilePath':
-				return $this->CurrentExecutionFilePath;
-				break;
-			case 'FilePath':
-				break;
-			case 'Files':
-				$this->Files = $this->ServerVariables["script_name"];
-				break;
-			case 'Filter':
-				break;
-			case 'Form':
-				return $this->Form;
-				break;
-			case 'Headers':
-				$this->GetHeaders();
-
-				$this->Headers = new 	HttpValueCollection($this->Headers);
-				
-				$this->Headers =	$this->ValidateHttpValueCollection($this->Headers);
-				
-				return $this->Headers;
-				
-				break;
-			case 'HttpMethod':
-				$this->HttpMethod = $this->ServerVariables['request_method'];
-				return $this->HttpMethod;
-				break;
-			case 'Item':
-				return $this->Item;
-				break;
-			case 'Params':
-				return $this->Params;
-				break;
-			case 'Path':
-				//$this->Path = $this->ServerVariables['request_uri'];
-				return $this->Path;
-				break;
-			case 'PhysicalApplicationPath':
-				break;
-			case 'PhysicalPath':
-				break;
-			case 'QueryString':
-				$this->QueryString = $this->ParseQueryString();
-				break;
-			case 'RawUrl';
-				break;
-			case 'Request':
-				if($this->Context == null)
-					return null;
-				return $this->Context->Request;
-				break;
-			case 'RequestType';
-				//$this->RequestType = new ContentType($this->ServerVariables['script_name']);
-				return $this->RequestType;
-				break;
-			case 'ServerVariables':
-				$this->ServerVariables	=	$this->GetServerVariables();
-				return $this->ServerVariables;//$this->ServerVariables;
-				break;
-			case 'Url';
-				$this->Url = new Uri($this->ServerVariables['request_uri']);
-				return $this->Url;
-				break;
-			case 'UrlReferrer':
-				return $this->UrlReferrer;
-				break;
-			case 'UserAgent':
-				return $this->UserAgent;
-				break;
-			case 'UserHostAdress':
-				return $this->UserHostAdress;
-				break;
-			case 'UserHostName':
-				return $this->UserHostName;
-				break;
-			case 'UserLanguages':
-				return $this->UserLanguages;
-				break;
-			case 'isAjax':
-				
-				if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
-					$this->isAjax = TRUE;
-				}
-				return $this->isAjax;
-				break;
-			case   'Response':
-				return $this->Context->Response;
-				break;
-			
-			
-		}
-	}
 	
 
 	
@@ -510,7 +379,7 @@ class HttpRequest  implements IHttpRequest
 	{
 		if($this->_wr !=null)
 		{
-			$Cookie = new HttpCookie;
+		
 			$_knowHeaderRequest = $this->Headers;
 			
 			if(isset( $_knowHeaderRequest["cookie"] ))
@@ -531,6 +400,7 @@ class HttpRequest  implements IHttpRequest
 				{
 					foreach($_COOKIE as $Key => $Value)
 					{
+                        $Cookie = new HttpCookie;
 						$Cookie->FromHeader=false;
 						
 						switch($Key)
@@ -555,14 +425,7 @@ class HttpRequest  implements IHttpRequest
 					}
 				}
 			}
-			
-			
-			if($includeResponse)
-			{
-				//  $cookieNoCreate = $this->
-			}
-
-		}
+        }
 	}
 	
 	public function FillInHeadersCollection()
@@ -597,27 +460,7 @@ class HttpRequest  implements IHttpRequest
 	}
 	
 
-	
-	/**
-	 * HttpRequest::GetLength()
-	 * 
-	 * @return
-	 */
-	private function GetLength()
-	{
-		// return $this->ParseValueHeaders('content-length');	
-	}
-	
-	/**
-	 * HttpRequest::GetType()
-	 * 
-	 * @return
-	 */
-	private function GetType()
-	{
-		//return $this->ParseValueHeaders('content-type');
-	}
-	
+		
 	/**
 	 * HttpRequest::GetServerVariables()
 	 * 
@@ -696,6 +539,7 @@ class HttpRequest  implements IHttpRequest
 
 		}
 	}
+    
 	public function AddServerVariableToCollection($name,$value)
 	{
 		if($value == null)
@@ -824,7 +668,7 @@ class HttpRequest  implements IHttpRequest
 	
 	public function GetContents($Resource = false)
 	{
-		if(false === $this->Contents || ( true === $Resouse && null !== $this->Contents))
+		if(false === $this->Contents || ( true === $Resource && null !== $this->Contents))
 		{
 			throw OrionException::Handler(new Exception\LogicException("getContent() can only be called once when using the resource return type."));
 		}
@@ -836,7 +680,7 @@ class HttpRequest  implements IHttpRequest
 		}
 		if(null === $this->Contents)
 		{
-			$this->Contents = file_get_contents('php://input');
+			$this->Contents =  file_get_contents('php://input');
 		}
 		
 		
@@ -845,10 +689,11 @@ class HttpRequest  implements IHttpRequest
 	
 	public function Send()
 	{
+
 		$this->SendHeaders();
 		$this->SendCookie();
 		$this->SendBody();
-		
+	
 		if (function_exists('fastcgi_finish_request')) {
 			fastcgi_finish_request();
 		} elseif ('cli' !== PHP_SAPI) {
@@ -884,7 +729,7 @@ class HttpRequest  implements IHttpRequest
 		if(headers_sent())
 		{
 			throw	OrionException::Handler(new ErrorException("Headers already sent! Tip: try ob_start() before calling send()]"));
-			return $this;
+
 		}
 		
 		if(!empty($this->Headers))
@@ -894,6 +739,7 @@ class HttpRequest  implements IHttpRequest
 				header($key.':'.$value, true);
 			}
 		}
+        return $this;
 	}
 	
 	public function SendCookie()
@@ -901,26 +747,38 @@ class HttpRequest  implements IHttpRequest
 		if(headers_sent())
 		{
 			throw	OrionException::Handler(new ErrorException("Headers already sent! Tip: try ob_start() before calling send()]"));
-			return $this;
+		
 		}
 		
 		if(!empty($this->Cookies))
 		{
+            
 			foreach ($this->Cookies as $cookie)
 			{
-				setcookie($cookie->name, $cookie->value, $cookie->expires, $cookie->path, $cookie->domain, $cookie->secure, $cookie->hostonly);
-			}
+                           
+                if($cookie instanceof HttpCookie){
+
+				    setcookie($cookie->name, $cookie->value, $cookie->expires, $cookie->path, $cookie->domain, $cookie->secure, $cookie->hostonly);
+			        
+                }else
+                {
+                    $array = $cookie->getArrayCopy();
+                    $_cookie = $array[1];
+
+                    setcookie($_cookie->name, $_cookie->value, $_cookie->expires, $_cookie->path,$_cookie->domain, $_cookie->secure,$_cookie->hostonly);
+                    
+                }
+            }
 			
 		}
-
-		return $this;
+        return $this;
+		
 	}
 	
 	public function SendBody()
 	{
 		echo (string)  $this->Contents;
-		
-		return $this;	
+        return $this;
 	}
 	
 	public function ValidateHttpValueCollection(HttpValueCollection $collection)
@@ -945,13 +803,13 @@ class HttpRequest  implements IHttpRequest
 	{
 		for($i = 0; $i<$collection->count();$i++)
 		{
-			$collectionKey = $collection->GetKey($i);
-			$srt = $collection->Get($i);
-			if(is_null($srt))
-			{
-				
-			}
+			$str = $collection->GetKey($i);
+			$srt2 = $collection->Get($i);
+            filter_var($str, FILTER_SANITIZE_STRING ,FILTER_FLAG_STRIP_HIGH);
+			filter_var($str2, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+			$collection->Add($str,$str2);
 		}
+        return $collection;
 	}
 	
 	

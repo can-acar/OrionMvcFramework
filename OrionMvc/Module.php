@@ -7,18 +7,28 @@ namespace	OrionMvc;
  *
  * @author:
 */
-abstract class Module extends SplObserver  implements IModule {
+class Module extends EventListener implements IModule {
 
 	public $ModuleName = null;
-	
+	private $Module = array();
+	private $application;
 	/**
 	 * Modul constructor
 	 *
 	 * @param 
 	 */
-	function Modul() {
-
+	function __construct($application) {
+	
+		$this->application = $application;
+		
+		return $this;
 	}
+	
+	public function onInit()
+	{
+		
+	}
+	
 	/**
 	 * This is method Register
 	 *
@@ -28,15 +38,24 @@ abstract class Module extends SplObserver  implements IModule {
 	 * @return mixed This is the return value description
 	 *
 	 */	
-	public function Register($ModuleName,$ActionFilter,$Params=array())
+	public  function Register($ModuleName,$ActionFilter,array $Params = null)
 	{
+		$__class = sprintf("Modul\\%s\\%s",$ModuleName,'TestModul');
 		
+		$__class = new \ReflectionClass($__class);
+		
+		$modul = 	$__class->newInstance($Params);
+		
+		//\Application::ConsoleLog($__func);
+		
+		//\Application::ConsoleLog($namespace);
+		
+		$this->application->Event->modul->bind($modul,"{$ActionFilter}");
+		
+		//\Application::ConsoleLog($this);
 	}
 	
-	public function Run()
-	{
-		
-	}
+
 }
 
 ?>
