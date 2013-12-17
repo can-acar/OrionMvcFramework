@@ -26,7 +26,7 @@ class Dispatcher
 	public function Dispatch(HttpContext $Context,$App)
 	{
 		try{
-            $App->Event->Dispatch->onInit($Context);
+           
 				
 			$Path = $Context->Request->Path;
 						
@@ -34,20 +34,17 @@ class Dispatcher
 			
 			$RouteMeta = $App->Router->RouteMeta;
 			
-			$App->Event->Dispatch->onActionExecuting($Context);
+			//$App->Event->Dispatch->onActionExecuting($Context);
 			
 			$Controller = $App->ControllerFactory->CreateController($Context,$RouteMeta);
 			
-			$App->Event->Dispatch->onActionPreExecuting(array($Context,$RouteMeta));
+			//$App->Event->Dispatch->onActionPreExecuting(array($Context,$RouteMeta));
 		
-			$App->Event->Dispatch->onActionResult($Context);
+			//$App->Event->Dispatch->onActionResult($Context);
 			
 			$Controller->Execute($Context,$RouteMeta);
 			
-			$App->Event->Dispatch->onActionExecuted(array($Context,$RouteMeta));
-			
-			
-			
+			//$App->Event->Dispatch->onActionExecuted(array($Context,$RouteMeta));			
 		}catch(Exception $e)
 		{
 			OrionException::Handler(new Exception\ErrorException("Application Dispatch Error!"));

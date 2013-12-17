@@ -1,8 +1,4 @@
 <?php
- //Application Start
- 
-
-
 
 define('ABSPATH',   dirname(realpath(__FILE__)). DIRECTORY_SEPARATOR);
 
@@ -29,6 +25,6 @@ $App->Configration = new Configration\Config($App);
 
 $App->Dispatcher->Dispatch($Context,$App);
 
-$App->Event->modul->onActionResult($App);
-\Application::ConsoleLog($App->Event->modul);
+
+
 ?>

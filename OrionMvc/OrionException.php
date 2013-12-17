@@ -45,7 +45,6 @@ class OrionException  {
 	 */	
 	public static function Instance()
 	{
-		//static $instance = null;
 		
 		if(null == self::$Instance)
 		{
@@ -90,9 +89,7 @@ class OrionException  {
 	public  function ExceptionHandler(\Exception $Exception )
 	{
 		if (0 === error_reporting()) { return false; }
-		
-		
-		//$message = "<pre><p>{$Exception->getMessage()} [{$Exception->getFile()}] ({$Exception->getLine()})</p></pre>";
+	
 		$message = "<pre><p>{$Exception->getMessage()}</p></pre>";
 			
 		exit($message);
@@ -121,10 +118,11 @@ class OrionException  {
 		}
 		array_shift($trace);
 		
-		$message = "<pre><p>{($ErrorMessage)} [{$ErrorFile}] ({$ErrorLine})</p></pre>";
+		$message = "<pre><p>{$ErrorMessage} [{$ErrorFile}] ({$ErrorLine})</p></pre>";
 		
 		
 		$Exception =	new \ErrorException($message, 0, $ErrorCode, $ErrorFile, $ErrorLine);
+		
 		$this->ExceptionHandler($Exception);
 				
 		exit;
@@ -189,11 +187,11 @@ class OrionException  {
 
 	public static function logError( $errorNumber, $errorString, $errorFile, $errorLine ) {
 		$errorInfo['errorString'] = sprintf( '%s - %s: %s in %s on line %s.',
-			strftime("%d.%m.%Y",time()),
-			self::getErrorType( $errorNumber ),
-			$errorString,
-			$errorFile,
-			$errorLine );
+												strftime("%d.%m.%Y",time()),
+												self::getErrorType( $errorNumber ),
+												$errorString,
+												$errorFile,
+												$errorLine );
 		$errorInfo['backTrace'] = self::parseBackTrace( debug_backtrace( ), 'error' );
 		self::$errorLog[] = $errorInfo;
 	}

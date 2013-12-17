@@ -14,8 +14,8 @@ class HomeController extends OrionMvc\Controller {
 	
 	
 	public function Index()
-	{		
-        $this->Message = "Orion Mvc Framework v1.0 ®";
+	{               
+		$this->Message = "Orion Mvc Framework v1.0 ®";
 		//$UserLogon = new UserLogon\UserLogonModel();
 		//$db = new OrionMvc\Database();
 		//$this->Session->{"Test"} = "test session";
@@ -53,11 +53,11 @@ class HomeController extends OrionMvc\Controller {
      //   $this->Response->Cookies->Reset();  
 		$this->Request->Cookies->AddCookie($cookie);
 		$this->Request->Cookies->AddCookie($cookie2);
-        //$this->Response->Cookies->AddCookie($cookie,true);
-        //$this->Request->SendCookie();
+	//$this->Response->Cookies->AddCookie($cookie,true);
+	//$this->Request->SendCookie();
 		
-        
-        
+	
+	
 		
 		//\Application::Debug($this);
 		
@@ -74,7 +74,7 @@ class HomeController extends OrionMvc\Controller {
 	public function ActionExecuted(array $Context=null)
 	{
 		//var_dump($Context);
-		$this->Message = "Action Executed";	
+		$this->Message = "Action Executed";     
 	}
 	
     #HttpPost#
@@ -96,7 +96,7 @@ class HomeController extends OrionMvc\Controller {
 	public function Jsontest()
 	{
 		$this->json = true;
-		
+				
 		return new Json($this);
 	}
 	
