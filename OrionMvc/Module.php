@@ -17,11 +17,10 @@ class Module extends EventListener implements IModule {
 	 *
 	 * @param 
 	 */
-	function __construct($application) {
-	
+	function __construct($application)
+	{
 		$this->application = $application;
-		
-		return $this;
+        return $this;
 	}
 	
 	public function onInit()
@@ -50,7 +49,7 @@ class Module extends EventListener implements IModule {
 		
 		//\Application::ConsoleLog($namespace);
 		
-		$this->application->Event->modul->bind($modul,"{$ActionFilter}");
+		$this->application->Event->modul->bind($modul,"$ActionFilter");
 		
 		//\Application::ConsoleLog($this);
 	}

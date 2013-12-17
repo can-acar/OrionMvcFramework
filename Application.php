@@ -191,7 +191,7 @@ class Application
 			}
 			
 		}
-        catch(\UnexpectedValueException $e)
+		catch(\UnexpectedValueException $e)
 		{
 			\OrionMvc\OrionException::Handler(new \ErrorException("Sistem Belirtilen Yolu Bulamıyor :[{$FilePath}]",0,0,null,0,null));
 			return false;
@@ -218,10 +218,11 @@ class Application
         $output = array();
         
         foreach ($params as $var) {
-            $output[] = '(' . gettype($var) . ') ' . htmlspecialchars(print_r($var,true));					
+			
+            $output[] = '(' . gettype($var) . ') ' . htmlspecialchars(print_r($var,true));			
             
         }
-        print(implode("\n", $output));	
+        print(implode("", $output));	
         $str = ob_get_contents(); 
         ob_end_clean();			 	
         self::PretyDebug($str);	
@@ -231,17 +232,21 @@ class Application
 	
 	public static function ConsoleLog($data)
 	{
-        //if(headers_sent() == false)
-        //{
-          
-        //   return false;
-        //}
+ 
+		$_trace = debug_backtrace();
         ob_start();
-        echo "<script>\r\n//<![CDATA[\r\nif(!console){var console={log:function(){}}}"; 
+        echo "<script>\r\n//<![CDATA[\r\nif(!console){var console={log:function(){}}}";
+		$_file = ($_trace[0]['file']);
+		$_line = ($_trace[0]['line']);
+	
+		
+	
         $output    =    explode("\n", print_r($data, true)); 
-        foreach ($output as $line) { 
+        foreach ($output as $line)
+		{ 
             if (trim($line)) { 
-                $line    =    addslashes($line); 
+                $line    =    addslashes($line);
+						
                 echo "console.log(\"{$line}\");"; 
             } 
         } 
@@ -251,6 +256,7 @@ class Application
 	
 	public static	function PretyDebug($in) 
 	{ 
+		$_trace = debug_backtrace();
         $captured = preg_split("/\r?\n/",$in);
         $output = array();
         $output[] = '<html>';
@@ -261,26 +267,31 @@ class Application
 						 <link href="../Theme/css/pygments.css" rel="stylesheet" media="screen">';
         $output[] = '</head>
 						 <body>';
-        $output[] = '<div class="container">
+        $output[] = '<div class="container" style="margin-top: 50px;">
 						 <div class="row">
-						 <div class="col-md-9">  
+						 <div class="col-lg-12">
+						 <div class="panel panel-default">
+						 <div class="panel-heading"> Debuging  <span class="s1"> [ '.$_trace[1]["file"].'] line = ['.$_trace[1]["line"].']</span></div>
+						 <div class="panel-body">
 						 <div class="highlight">';
         $output[] = '<pre>';
         $output[] = '<code class="html">'; 
         foreach($captured as $line)
         {
             
-			$output[] = self::debug_colorize_string($line)."\n";
+			$output[] = self::debug_colorize_string($line)."</br>";
 			
         }
         $output[] = '</code>';
         $output[] = '</pre>';
         $output[] = '</div/>
 						 </div>
+						 </div>
+						 </div>
 						 </div>';
         $output[] = '</body>
 						 </html>';
-        print(implode("\n", $output));
+        print(implode("", $output));
         exit;	
     } 
 	
@@ -291,25 +302,28 @@ class Application
         
         $string = preg_replace('/\[(line)\]/i','[<strong> <span class="mf">$1</span></strong> ]',$string);
         
-        $string = preg_replace('/\[(function)\]/i','[<strong> <span class="k">$1</span></strong> ]',$string);
+        $string = preg_replace('/\[(function)\]/i','[<strong> <span class="nf">$1</span></strong> ]',$string);
         
-        $string = preg_replace('/\[(class)\]/i','[<strong> <span class="mh">$1</span></strong> ]',$string);
+        $string = preg_replace('/\[(class)\]/i','[<strong> <span class="na">$1</span></strong> ]',$string);
         
         $string = preg_replace('/\[(type)\]/i','[<strong> <span class="ss">$1</span></strong> ]',$string);
         
         $string = preg_replace('/\[(args)\]/i','[<strong> <span class="nt">$1</span></strong> ]',$string);
         
-        $string = preg_replace("/\[(\w.*)\]/i", '[<strong> <span class="sb">$1</span></strong> ]', $string);
+        $string = preg_replace("/\[(\w.*)\]/i", '[<strong> <span class="nv">$1</span></strong> ]', $string);
         //$string = preg_replace_callback("/(\s+)\($/", 'next_div', $string);
-        $string = preg_replace("/(\s+)\)$/", '<span class="s">($1)</span>', $string);
-        /* turn array indexes to red */ 
-        /* turn the word Array blue */ 
-        $string = str_replace('Array','<span class="c">Array</span>',$string); 
+		$string = preg_replace("/\[(:private)\]/i", '', $string);
+	
+        //$string = preg_replace("/(\s+)\)$/", '<span class="s">($1)</span>', $string);
+
+        $string = str_replace('Array','',$string);
         
-        
-        /* turn arrows graygreen */ 
+		$string = str_replace('(object)','<span class="kt">(object)</span>',$string);
+		
+		$string = str_replace('(array)','<span class="kt">[array]</span>',$string);
+		
         $string = str_replace('=>','<span class="s">=></span>',$string);
-        
+      
         
         return $string;
     } 

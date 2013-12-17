@@ -42,7 +42,7 @@ class EventDispatcher implements IEventDispathcer  {
 	 */
 	public function add($name, $triggersMethod = null)
 	{
-	
+		
 		if (!isset($this->_events[$name])) 
 		{
 			
