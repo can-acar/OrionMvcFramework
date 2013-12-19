@@ -15,6 +15,8 @@ abstract class AbstractController extends ActionFilter
 	public $Response;
 	
 	public $Session;
+
+	public $ViewName = null;
 	
 	public function __set($key,$value)
 	{		

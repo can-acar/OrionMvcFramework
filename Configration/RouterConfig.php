@@ -26,12 +26,17 @@ class RouterConfig{
 				 'action'=>'About']
 		 );
 
+
+		OrionMvc\Router::Connect('default2','/?{query}',
+				['controller'=>'Home',
+					'action'=>'Index'],
+				['query'=>OrionMvc\Router::QUERY_STRING_PARAMS]);
+		
 		OrionMvc\Router::Connect('default','{controller}/{action}/{content}/{id}',
 				['controller'=>'Home',
 					'action'=>'Index'],
 				['id'=>'\d+',
 					'text'=>'([a-zA-Z]+)']);
-		
 
 	}	
 }				

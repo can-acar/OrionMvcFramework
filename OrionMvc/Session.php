@@ -13,7 +13,7 @@ class Session implements ISession
 	private $sess_name;
 
 
-	public	function __construct()//(HttpContext $context)
+	public	function __construct()
 	{
 		
 		session_set_save_handler(
@@ -26,7 +26,7 @@ class Session implements ISession
 			);
 		register_shutdown_function(array($this,"dispose"));
 		session_start();
-		//$context->Session = $this;
+
 		return $this;
 	}
 
@@ -50,7 +50,15 @@ class Session implements ISession
 
 		$sess_file = $this->sess_save_path."/sess_$id";
 
-		return (string) @file_get_contents($sess_file);
+		if(file_exists($sess_file))
+		{
+			
+			return (string) @file_get_contents($sess_file);
+
+
+		}
+		return false;
+
 	}
 
 	public	function write($id, $sess_data)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OrionMvc{
+namespace OrionMvc;
 
 /**
  * HttpRequest
@@ -260,7 +260,7 @@ class HttpRequest  implements IHttpRequest
 	/**
 	 * HttpRequest::__construct()
 	 * 
-	 * @return
+	 * 
 	 */
 	public function __construct($uri=null, $method = null,$queryString = null,$Contents = null){
 		
@@ -300,8 +300,10 @@ class HttpRequest  implements IHttpRequest
 		}
 		return $this->Params;
 	}
-	
-	
+
+	/* HttpRequest::FillInParamsCollection
+	 *
+	 */
 	function FillInParamsCollection()
 	{
 		$this->Params->Add($this->QueryString);
@@ -310,7 +312,10 @@ class HttpRequest  implements IHttpRequest
 		$this->Params->Add($this->ServerVariables);
 		
 	}
-	
+	/** 
+	 * HttpRequest::FillInServerVariablesCollection()
+	 *
+	 */
 	public function FillInServerVariablesCollection()
 	{
 		if($this->_wr !=null)
@@ -723,12 +728,13 @@ class HttpRequest  implements IHttpRequest
 		
 		
 	}
+
 	
 	public function SendHeaders()
 	{
 		if(headers_sent())
 		{
-			throw	OrionException::Handler(new ErrorException("Headers already sent! Tip: try ob_start() before calling send()]"));
+			throw	OrionException::Handler(new Exception\ErrorException("Headers already sent! Tip: try ob_start() before calling send()]"));
 
 		}
 		
@@ -746,7 +752,7 @@ class HttpRequest  implements IHttpRequest
 	{
 		if(headers_sent())
 		{
-			throw	OrionException::Handler(new ErrorException("Headers already sent! Tip: try ob_start() before calling send()]"));
+			throw	OrionException::Handler(new Exception\ErrorException("Headers already sent! Tip: try ob_start() before calling send()]"));
 		
 		}
 		
@@ -813,6 +819,828 @@ class HttpRequest  implements IHttpRequest
 	}
 	
 	
-}
+
+
+    /**
+     * Gets the Gets a string array of client-supported MIME accept types..
+     *
+     * @return $AcceptTypes
+     */
+    public function getAcceptTypes()
+    {
+        return $this->AcceptTypes;
+    }
+
+    /**
+     * Sets the Gets a string array of client-supported MIME accept types..
+     *
+     * @param $AcceptTypes $AcceptTypes the accept types
+     *
+     * @return self
+     */
+    public function setAcceptTypes(AcceptTypes $AcceptTypes)
+    {
+        $this->AcceptTypes = $AcceptTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Gets the php application's virtual application root path on the server..
+     *
+     * @return mixed
+     */
+    public function getApplicationPath()
+    {
+        return $this->ApplicationPath;
+    }
+
+    /**
+     * Sets the Gets the php application's virtual application root path on the server..
+     *
+     * @param mixed $ApplicationPath the application path
+     *
+     * @return self
+     */
+    public function setApplicationPath($ApplicationPath)
+    {
+        $this->ApplicationPath = $ApplicationPath;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Gets or sets information about the requesting client's browser capabilities..
+     *
+     * @return mixed
+     */
+    public function getBrowser()
+    {
+        return $this->Browser;
+    }
+
+    /**
+     * Sets the Gets or sets information about the requesting client's browser capabilities..
+     *
+     * @param mixed $Browser the browser
+     *
+     * @return self
+     */
+    public function setBrowser($Browser)
+    {
+        $this->Browser = $Browser;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable ContentEncoding description.
+     *
+     * @return mixed
+     */
+    public function getContentEncoding()
+    {
+        return $this->ContentEncoding;
+    }
+
+    /**
+     * Sets the This is variable ContentEncoding description.
+     *
+     * @param mixed $ContentEncoding the content encoding
+     *
+     * @return self
+     */
+    public function setContentEncoding($ContentEncoding)
+    {
+        $this->ContentEncoding = $ContentEncoding;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable ContentLength description.
+     *
+     * @return mixed
+     */
+    public function getContentLength()
+    {
+        return $this->ContentLength;
+    }
+
+    /**
+     * Sets the This is variable ContentLength description.
+     *
+     * @param mixed $ContentLength the content length
+     *
+     * @return self
+     */
+    public function setContentLength($ContentLength)
+    {
+        $this->ContentLength = $ContentLength;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable ContentType description.
+     *
+     * @return mixed
+     */
+    public function getContentType()
+    {
+        return $this->ContentType;
+    }
+
+    /**
+     * Sets the This is variable ContentType description.
+     *
+     * @param mixed $ContentType the content type
+     *
+     * @return self
+     */
+    public function setContentType($ContentType)
+    {
+        $this->ContentType = $ContentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Context description.
+     *
+     * @return mixed
+     */
+    public function getContext()
+    {
+        return $this->Context;
+    }
+
+    /**
+     * Sets the This is variable Context description.
+     *
+     * @param mixed $Context the context
+     *
+     * @return self
+     */
+    public function setContext($Context)
+    {
+        $this->Context = $Context;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Gets a collection of cookies sent by the client..
+     *
+     * @return Cookie;
+     */
+    public function getCookies()
+    {
+        return $this->Cookies;
+    }
+
+    /**
+     * Sets the Gets a collection of cookies sent by the client..
+     *
+     * @param Cookie; $Cookies the cookies
+     *
+     * @return self
+     */
+    public function setCookies($Cookies)
+    {
+        $this->Cookies = $Cookies;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable CurrentExecutionFilePath description.
+     *
+     * @return mixed
+     */
+    public function getCurrentExecutionFilePath()
+    {
+        return $this->CurrentExecutionFilePath;
+    }
+
+    /**
+     * Sets the This is variable CurrentExecutionFilePath description.
+     *
+     * @param mixed $CurrentExecutionFilePath the current execution file path
+     *
+     * @return self
+     */
+    public function setCurrentExecutionFilePath($CurrentExecutionFilePath)
+    {
+        $this->CurrentExecutionFilePath = $CurrentExecutionFilePath;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable FilePath description.
+     *
+     * @return mixed
+     */
+    public function getFilePath()
+    {
+        return $this->FilePath;
+    }
+
+    /**
+     * Sets the This is variable FilePath description.
+     *
+     * @param mixed $FilePath the file path
+     *
+     * @return self
+     */
+    public function setFilePath($FilePath)
+    {
+        $this->FilePath = $FilePath;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Files description.
+     *
+     * @return mixed
+     */
+    public function getFiles()
+    {
+        return $this->Files;
+    }
+
+    /**
+     * Sets the This is variable Files description.
+     *
+     * @param mixed $Files the files
+     *
+     * @return self
+     */
+    public function setFiles($Files)
+    {
+        $this->Files = $Files;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Filter description.
+     *
+     * @return mixed
+     */
+    public function getFilter()
+    {
+        return $this->Filter;
+    }
+
+    /**
+     * Sets the This is variable Filter description.
+     *
+     * @param mixed $Filter the filter
+     *
+     * @return self
+     */
+    public function setFilter($Filter)
+    {
+        $this->Filter = $Filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Form description.
+     *
+     * @return mixed
+     */
+    public function getForm()
+    {
+        return $this->Form;
+    }
+
+    /**
+     * Sets the This is variable Form description.
+     *
+     * @param mixed $Form the form
+     *
+     * @return self
+     */
+    public function setForm($Form)
+    {
+        $this->Form = $Form;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Headers description.
+     *
+     * @return mixed
+     */
+    public function getHeaders()
+    {
+        return $this->Headers;
+    }
+
+    /**
+     * Sets the This is variable Headers description.
+     *
+     * @param mixed $Headers the headers
+     *
+     * @return self
+     */
+    public function setHeaders($Headers)
+    {
+        $this->Headers = $Headers;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable HttpMethod description.
+     *
+     * @return mixed
+     */
+    public function getHttpMethod()
+    {
+        return $this->HttpMethod;
+    }
+
+    /**
+     * Sets the This is variable HttpMethod description.
+     *
+     * @param mixed $HttpMethod the http method
+     *
+     * @return self
+     */
+    public function setHttpMethod($HttpMethod)
+    {
+        $this->HttpMethod = $HttpMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Item description.
+     *
+     * @return mixed
+     */
+    public function getItem()
+    {
+        return $this->Item;
+    }
+
+    /**
+     * Sets the This is variable Item description.
+     *
+     * @param mixed $Item the item
+     *
+     * @return self
+     */
+    public function setItem($Item)
+    {
+        $this->Item = $Item;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable isAjax description.
+     *
+     * @return mixed
+     */
+    public function getIsAjax()
+    {
+        return $this->isAjax;
+    }
+
+    /**
+     * Sets the This is variable isAjax description.
+     *
+     * @param mixed $isAjax the is ajax
+     *
+     * @return self
+     */
+    public function setIsAjax($isAjax)
+    {
+        $this->isAjax = $isAjax;
+
+        return $this;
+    }
+
+    /**
+     * Sets the This is variable Params description.
+     *
+     * @param mixed $Params the params
+     *
+     * @return self
+     */
+    public function setParams($Params)
+    {
+        $this->Params = $Params;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Path description.
+     *
+     * @return mixed
+     */
+    public function getPath()
+    {
+        return $this->Path;
+    }
+
+    /**
+     * Sets the This is variable Path description.
+     *
+     * @param mixed $Path the path
+     *
+     * @return self
+     */
+    public function setPath($Path)
+    {
+        $this->Path = $Path;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable PhysicalApplicationPath description.
+     *
+     * @return mixed
+     */
+    public function getPhysicalApplicationPath()
+    {
+        return $this->PhysicalApplicationPath;
+    }
+
+    /**
+     * Sets the This is variable PhysicalApplicationPath description.
+     *
+     * @param mixed $PhysicalApplicationPath the physical application path
+     *
+     * @return self
+     */
+    public function setPhysicalApplicationPath($PhysicalApplicationPath)
+    {
+        $this->PhysicalApplicationPath = $PhysicalApplicationPath;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable PhysicalPath description.
+     *
+     * @return mixed
+     */
+    public function getPhysicalPath()
+    {
+        return $this->PhysicalPath;
+    }
+
+    /**
+     * Sets the This is variable PhysicalPath description.
+     *
+     * @param mixed $PhysicalPath the physical path
+     *
+     * @return self
+     */
+    public function setPhysicalPath($PhysicalPath)
+    {
+        $this->PhysicalPath = $PhysicalPath;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable QueryString description.
+     *
+     * @return mixed
+     */
+    public function getQueryString()
+    {
+        return $this->QueryString;
+    }
+
+    /**
+     * Sets the This is variable QueryString description.
+     *
+     * @param mixed $QueryString the query string
+     *
+     * @return self
+     */
+    public function setQueryString($QueryString)
+    {
+        $this->QueryString = $QueryString;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable RawUrl description.
+     *
+     * @return mixed
+     */
+    public function getRawUrl()
+    {
+        return $this->RawUrl;
+    }
+
+    /**
+     * Sets the This is variable RawUrl description.
+     *
+     * @param mixed $RawUrl the raw url
+     *
+     * @return self
+     */
+    public function setRawUrl($RawUrl)
+    {
+        $this->RawUrl = $RawUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Request description.
+     *
+     * @return mixed
+     */
+    public function getRequest()
+    {
+        return $this->Request;
+    }
+
+    /**
+     * Sets the This is variable Request description.
+     *
+     * @param mixed $Request the request
+     *
+     * @return self
+     */
+    public function setRequest($Request)
+    {
+        $this->Request = $Request;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable RquestType description.
+     *
+     * @return mixed
+     */
+    public function getRequestType()
+    {
+        return $this->RequestType;
+    }
+
+    /**
+     * Sets the This is variable RquestType description.
+     *
+     * @param mixed $RequestType the request type
+     *
+     * @return self
+     */
+    public function setRequestType($RequestType)
+    {
+        $this->RequestType = $RequestType;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable ServerVariables description.
+     *
+     * @return mixed
+     */
+    public function getServerVariables()
+    {
+        return $this->ServerVariables;
+    }
+
+    /**
+     * Sets the This is variable ServerVariables description.
+     *
+     * @param mixed $ServerVariables the server variables
+     *
+     * @return self
+     */
+    public function setServerVariables($ServerVariables)
+    {
+        $this->ServerVariables = $ServerVariables;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable Url description.
+     *
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->Url;
+    }
+
+    /**
+     * Sets the This is variable Url description.
+     *
+     * @param mixed $Url the url
+     *
+     * @return self
+     */
+    public function setUrl($Url)
+    {
+        $this->Url = $Url;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable UrlReferrer description.
+     *
+     * @return mixed
+     */
+    public function getUrlReferrer()
+    {
+        return $this->UrlReferrer;
+    }
+
+    /**
+     * Sets the This is variable UrlReferrer description.
+     *
+     * @param mixed $UrlReferrer the url referrer
+     *
+     * @return self
+     */
+    public function setUrlReferrer($UrlReferrer)
+    {
+        $this->UrlReferrer = $UrlReferrer;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable UserAgent description.
+     *
+     * @return mixed
+     */
+    public function getUserAgent()
+    {
+        return $this->UserAgent;
+    }
+
+    /**
+     * Sets the This is variable UserAgent description.
+     *
+     * @param mixed $UserAgent the user agent
+     *
+     * @return self
+     */
+    public function setUserAgent($UserAgent)
+    {
+        $this->UserAgent = $UserAgent;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable UserHostAdress description.
+     *
+     * @return mixed
+     */
+    public function getUserHostAdress()
+    {
+        return $this->UserHostAdress;
+    }
+
+    /**
+     * Sets the This is variable UserHostAdress description.
+     *
+     * @param mixed $UserHostAdress the user host adress
+     *
+     * @return self
+     */
+    public function setUserHostAdress($UserHostAdress)
+    {
+        $this->UserHostAdress = $UserHostAdress;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable UserHostName description.
+     *
+     * @return mixed
+     */
+    public function getUserHostName()
+    {
+        return $this->UserHostName;
+    }
+
+    /**
+     * Sets the This is variable UserHostName description.
+     *
+     * @param mixed $UserHostName the user host name
+     *
+     * @return self
+     */
+    public function setUserHostName($UserHostName)
+    {
+        $this->UserHostName = $UserHostName;
+
+        return $this;
+    }
+
+    /**
+     * Gets the This is variable UserLanguages description.
+     *
+     * @return mixed
+     */
+    public function getUserLanguages()
+    {
+        return $this->UserLanguages;
+    }
+
+    /**
+     * Sets the This is variable UserLanguages description.
+     *
+     * @param mixed $UserLanguages the user languages
+     *
+     * @return self
+     */
+    public function setUserLanguages($UserLanguages)
+    {
+        $this->UserLanguages = $UserLanguages;
+
+        return $this;
+    }
+
+
+    /**
+     * Sets the value of Contents.
+     *
+     * @param mixed $Contents the contents
+     *
+     * @return self
+     */
+    public function setContents($Contents)
+    {
+        $this->Contents = $Contents;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of IP.
+     *
+     * @return mixed
+     */
+    public function getIP()
+    {
+        return $this->IP;
+    }
+
+    /**
+     * Sets the value of IP.
+     *
+     * @param mixed $IP the i p
+     *
+     * @return self
+     */
+    public function setIP($IP)
+    {
+        $this->IP = $IP;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of _wr.
+     *
+     * @return mixed
+     */
+    public function get_wr()
+    {
+        return $this->_wr;
+    }
+
+    /**
+     * Sets the value of _wr.
+     *
+     * @param mixed $_wr the _wr
+     *
+     * @return self
+     */
+    public function set_wr($_wr)
+    {
+        $this->_wr = $_wr;
+
+        return $this;
+    }
+
 }
 ?>

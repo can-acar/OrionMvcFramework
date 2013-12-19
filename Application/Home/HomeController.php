@@ -53,15 +53,33 @@ class HomeController extends OrionMvc\Controller {
      //   $this->Response->Cookies->Reset();  
 		$this->Request->Cookies->AddCookie($cookie);
 		$this->Request->Cookies->AddCookie($cookie2);
-	//$this->Response->Cookies->AddCookie($cookie,true);
-	//$this->Request->SendCookie();
+			//$this->Response->Cookies->AddCookie($cookie,true);
+		//$this->Request->SendCookie();
 		
 	
 	
 		
-		//\Application::Debug($this);
+		\Application::Debug($this);
 		
 		
+	}
+
+	/**
+	 * TODO: Eğer http post yapıyor ve form post ise  method parametreleri  belirtilim post  parametreleriyle eşleşip handle edilecek 
+	 * 
+	 */
+
+
+	public function About()
+	{
+			$this->ViewName = "Index";
+	}
+
+	#HttpPost#
+	#Form#
+	public function ContactFormPost()
+	{
+
 	}
 	
     #HttpPost#
@@ -73,7 +91,6 @@ class HomeController extends OrionMvc\Controller {
 	
 	public function ActionExecuted(array $Context=null)
 	{
-		//var_dump($Context);
 		$this->Message = "Action Executed";     
 	}
 	

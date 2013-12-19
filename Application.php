@@ -7,7 +7,7 @@
  * @copyright 2013
  * @version 1.0
  */
-
+use OrionMvc\Exception as Exception;
 class Application
 {
 	
@@ -116,25 +116,26 @@ class Application
 	{
 		try
 		{
-            
-			$this->Event			 = new OrionMvc\EventDispatcher();
-			
-			$this->Dispatcher        = new OrionMvc\Dispatcher($this);
-			
-			$this->ControllerFactory = new OrionMvc\ControllerFactory();
+
+			$this->Session		 	 = new OrionMvc\Session();
 
 			$this->Router			 = new OrionMvc\Router();
+            
+			$this->Event			 = new OrionMvc\EventDispatcher();
+
+			$this->ControllerFactory = new OrionMvc\ControllerFactory();
 
 			$this->View			     = new OrionMvc\View();
 			
-			$this->Session		 	 = new OrionMvc\Session();
+			$this->Dispatcher        = new OrionMvc\Dispatcher($this);
+
 			
 			return $this;
 
 		}
         catch (Exception $e)
 		{
-			throw OrionException::Handler(new \ErrorException("Application Initialize Error!."));
+			throw OrionException::Handler(new Exception\ErrorException("Application Initialize Error!."));
 			
 		}
 		
@@ -191,9 +192,9 @@ class Application
 			}
 			
 		}
-		catch(\UnexpectedValueException $e)
+		catch(\OrionMvc\Exception\UnexpectedValueException $e)
 		{
-			\OrionMvc\OrionException::Handler(new \ErrorException("Sistem Belirtilen Yolu Bulamıyor :[{$FilePath}]",0,0,null,0,null));
+			\OrionMvc\OrionException::Handler(new Exception\ErrorException("Sistem Belirtilen Yolu Bulamıyor :[{$FilePath}]",0,0,null,0,null));
 			return false;
 		}
 		
@@ -311,10 +312,8 @@ class Application
         $string = preg_replace('/\[(args)\]/i','[<strong> <span class="nt">$1</span></strong> ]',$string);
         
         $string = preg_replace("/\[(\w.*)\]/i", '[<strong> <span class="nv">$1</span></strong> ]', $string);
-        //$string = preg_replace_callback("/(\s+)\($/", 'next_div', $string);
+       
 		$string = preg_replace("/\[(:private)\]/i", '', $string);
-	
-        //$string = preg_replace("/(\s+)\)$/", '<span class="s">($1)</span>', $string);
 
         $string = str_replace('Array','',$string);
         

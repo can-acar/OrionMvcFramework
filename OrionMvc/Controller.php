@@ -51,6 +51,11 @@ abstract class Controller extends AbstractController implements IController  {
 		//echo($_Action->getDocComment());
 		//$this->ActionExecuted($_Action);
 		
+		if (!is_null($ActionName)) {
+			$ActionName = $this->ViewName;
+		}
+
+
 		if($Context->Request->isAjax == false)
 			$this->Render($Context,$Controller,$ActionName);
 		
