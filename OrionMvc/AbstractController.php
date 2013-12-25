@@ -18,6 +18,8 @@ abstract class AbstractController extends ActionFilter
 
 	public $ViewName = null;
 	
+	public $App=null;
+	
 	public function __set($key,$value)
 	{		
 		$this->ViewData->SetData($key,$value);

@@ -25,7 +25,7 @@ abstract class Controller extends AbstractController implements IController  {
 		$this->ViewData = new ViewData();
 		//$this->ActionExecuted();
 		//$this->ActionExecuting();
-
+		
 		return $this;
 	}
 	

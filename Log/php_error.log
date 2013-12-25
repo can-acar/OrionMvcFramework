@@ -1,0 +1,90 @@
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Warning:  apc_cache_info() expects at most 1 parameter, 2 given in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 187
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_hits in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 189
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 750
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: start_time in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 750
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: start_time in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 751
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 752
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: start_time in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 752
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_inserts in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 753
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: start_time in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 753
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_entries in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 760
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: locking_type in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 779
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: start_time in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 782
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: start_time in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 783
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 793
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: expunges in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 798
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 853
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 857
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 857
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 857
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Warning:  apc_cache_info() expects at most 1 parameter, 2 given in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 187
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_hits in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 189
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Warning:  apc_cache_info() expects at most 1 parameter, 2 given in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 187
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Warning:  apc_cache_info() expects at most 1 parameter, 2 given in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 187
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_hits in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 189
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_hits in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 189
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 372
+[15-Dec-2013 22:32:33 Europe/Istanbul] PHP Notice:  Undefined index: num_misses in /Library/Application Support/appsolute/MAMP PRO/mamp/apc.php on line 376
+[15-Dec-2013 22:32:40 Europe/Istanbul] PHP Strict Standards:  Non-static method sqlite::getDbVersion() should not be called statically, assuming $this from incompatible context in /Applications/MAMP/bin/SQLiteManager/include/SQLiteAutoConnect.class.php on line 12
+[16-Dec-2013 22:03:12 Europe/Istanbul] PHP Fatal error:  Call to undefined method OrionMvc\Event::onInit() in /Applications/www/OrionMvc/Dispatcher.php on line 29
+[16-Dec-2013 22:03:12 Europe/Istanbul] PHP Stack trace:
+[16-Dec-2013 22:03:12 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[16-Dec-2013 22:03:12 Europe/Istanbul] PHP   2. OrionMvc\Dispatcher->Dispatch() /Applications/www/index.php:30
+[16-Dec-2013 22:03:48 Europe/Istanbul] PHP Fatal error:  Call to undefined method OrionMvc\Event::onInit() in /Applications/www/OrionMvc/Dispatcher.php on line 29
+[16-Dec-2013 22:03:48 Europe/Istanbul] PHP Stack trace:
+[16-Dec-2013 22:03:48 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[16-Dec-2013 22:03:48 Europe/Istanbul] PHP   2. OrionMvc\Dispatcher->Dispatch() /Applications/www/index.php:30
+[16-Dec-2013 22:15:29 Europe/Istanbul] PHP Fatal error:  Call to undefined method OrionMvc\Event::onInit() in /Applications/www/OrionMvc/Dispatcher.php on line 29
+[16-Dec-2013 22:15:29 Europe/Istanbul] PHP Stack trace:
+[16-Dec-2013 22:15:29 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[16-Dec-2013 22:15:29 Europe/Istanbul] PHP   2. OrionMvc\Dispatcher->Dispatch() /Applications/www/index.php:30
+[16-Dec-2013 22:34:56 Europe/Istanbul] PHP Fatal error:  Call to undefined method OrionMvc\Event::onInit() in /Applications/www/OrionMvc/Dispatcher.php on line 29
+[16-Dec-2013 22:34:56 Europe/Istanbul] PHP Stack trace:
+[16-Dec-2013 22:34:56 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[16-Dec-2013 22:34:56 Europe/Istanbul] PHP   2. OrionMvc\Dispatcher->Dispatch() /Applications/www/index.php:30
+[16-Dec-2013 22:34:58 Europe/Istanbul] PHP Fatal error:  Call to undefined method OrionMvc\Event::onInit() in /Applications/www/OrionMvc/Dispatcher.php on line 29
+[16-Dec-2013 22:34:58 Europe/Istanbul] PHP Stack trace:
+[16-Dec-2013 22:34:58 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[16-Dec-2013 22:34:58 Europe/Istanbul] PHP   2. OrionMvc\Dispatcher->Dispatch() /Applications/www/index.php:30
+[16-Dec-2013 22:40:03 Europe/Istanbul] PHP Fatal error:  Call to undefined method OrionMvc\Event::onInit() in /Applications/www/OrionMvc/Dispatcher.php on line 29
+[16-Dec-2013 22:40:03 Europe/Istanbul] PHP Stack trace:
+[16-Dec-2013 22:40:03 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[16-Dec-2013 22:40:03 Europe/Istanbul] PHP   2. OrionMvc\Dispatcher->Dispatch($Context = *uninitialized*, $App = *uninitialized*) /Applications/www/index.php:30
+[18-Dec-2013 10:21:21 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /Applications/www/OrionMvc/HttpRequest.php on line 830
+[18-Dec-2013 10:21:21 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 10:21:21 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 10:21:21 Europe/Istanbul] PHP   2. spl_autoload_call() /Applications/www/index.php:22
+[18-Dec-2013 10:21:21 Europe/Istanbul] PHP   3. OrionMvc\Autoloader::Load() /Applications/www/index.php:0
+[18-Dec-2013 10:39:42 Europe/Istanbul] PHP Fatal error:  Cannot redeclare OrionMvc\HttpRequest::getParams() in /Applications/www/OrionMvc/HttpRequest.php on line 1234
+[18-Dec-2013 10:39:42 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 10:39:42 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 10:39:42 Europe/Istanbul] PHP   2. spl_autoload_call() /Applications/www/index.php:22
+[18-Dec-2013 10:39:42 Europe/Istanbul] PHP   3. OrionMvc\Autoloader::Load() /Applications/www/index.php:0
+[18-Dec-2013 10:40:24 Europe/Istanbul] PHP Fatal error:  Cannot redeclare OrionMvc\HttpRequest::getContents() in /Applications/www/OrionMvc/HttpRequest.php on line 1584
+[18-Dec-2013 10:40:24 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 10:40:24 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 10:40:24 Europe/Istanbul] PHP   2. spl_autoload_call() /Applications/www/index.php:22
+[18-Dec-2013 10:40:24 Europe/Istanbul] PHP   3. OrionMvc\Autoloader::Load() /Applications/www/index.php:0
+[18-Dec-2013 20:53:06 Europe/Istanbul] PHP Fatal error:  Undefined class constant 'Instance' in /Applications/www/index.php on line 16
+[18-Dec-2013 20:53:06 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 20:53:06 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 20:53:29 Europe/Istanbul] PHP Fatal error:  Undefined class constant 'Instance' in /Applications/www/index.php on line 16
+[18-Dec-2013 20:53:29 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 20:53:29 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 20:53:56 Europe/Istanbul] PHP Fatal error:  Undefined class constant 'Instance' in /Applications/www/index.php on line 15
+[18-Dec-2013 20:53:56 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 20:53:56 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP Fatal error:  Call to undefined function OrionMvc\file_exist() in /Applications/www/OrionMvc/Session.php on line 53
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP Stack trace:
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP   2. Application::GetInstance() /Applications/www/index.php:20
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP   3. Application->Initialize() /Applications/www/Application.php:103
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP   4. OrionMvc\Session->__construct() /Applications/www/Application.php:120
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP   5. session_start() /Applications/www/OrionMvc/Session.php:28
+[18-Dec-2013 21:01:46 Europe/Istanbul] PHP   6. OrionMvc\Session->read() /Applications/www/OrionMvc/Session.php:28
+[20-Dec-2013 20:00:22 Europe/Istanbul] PHP Fatal error:  Call to undefined function OrionMvc\basepath() in /Applications/www/OrionMvc/HttpRequest.php on line 354
+[20-Dec-2013 20:00:23 Europe/Istanbul] PHP Stack trace:
+[20-Dec-2013 20:00:23 Europe/Istanbul] PHP   1. {main}() /Applications/www/index.php:0
+[20-Dec-2013 20:00:23 Europe/Istanbul] PHP   2. OrionMvc\HttpRequest->__construct() /Applications/www/index.php:22
+[20-Dec-2013 20:00:23 Europe/Istanbul] PHP   3. OrionMvc\HttpRequest->GetServerVars() /Applications/www/OrionMvc/HttpRequest.php:267
+[20-Dec-2013 20:00:23 Europe/Istanbul] PHP   4. OrionMvc\HttpRequest->FillInServerVariablesCollection() /Applications/www/OrionMvc/HttpRequest.php:482

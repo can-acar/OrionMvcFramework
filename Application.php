@@ -128,7 +128,8 @@ class Application
 			$this->View			     = new OrionMvc\View();
 			
 			$this->Dispatcher        = new OrionMvc\Dispatcher($this);
-
+				
+			
 			
 			return $this;
 
@@ -153,7 +154,8 @@ class Application
 	{
 		$getConfig = func_get_args();
 		
-		foreach ($getConfig  as $config) {
+		foreach ($getConfig  as $config) 
+		{
 			if(file_exists(self::FindFile($config)))
 			{
 				require_once(self::FindFile($config));
@@ -194,7 +196,7 @@ class Application
 		}
 		catch(\OrionMvc\Exception\UnexpectedValueException $e)
 		{
-			\OrionMvc\OrionException::Handler(new Exception\ErrorException("Sistem Belirtilen Yolu Bulamıyor :[{$FilePath}]",0,0,null,0,null));
+			 throw \OrionMvc\OrionException::Handler(new Exception\ErrorException("Sistem Belirtilen Yolu Bulamıyor :[{$FilePath}]",0,0,null,0,null));
 			return false;
 		}
 		
@@ -230,6 +232,9 @@ class Application
         
 		ob_end_clean();				
 	}
+	
+
+
 	
 	public static function ConsoleLog($data)
 	{

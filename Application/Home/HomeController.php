@@ -49,15 +49,15 @@ class HomeController extends OrionMvc\Controller {
 		
 		//trigger_error("User Error mesajı felan", E_USER_NOTICE);
 		//trigger_error("Insufficient arguments", E_USER_ERROR);
-      //  $this->Request->Cookies->Reset();
-     //   $this->Response->Cookies->Reset();  
-		$this->Request->Cookies->AddCookie($cookie);
-		$this->Request->Cookies->AddCookie($cookie2);
+		//  $this->Request->Cookies->Reset();
+		//  $this->Response->Cookies->Reset();  
+		//$this->Request->Cookies->AddCookie($cookie);
+		//$this->Request->Cookies->AddCookie($cookie2);
 			//$this->Response->Cookies->AddCookie($cookie,true);
 		//$this->Request->SendCookie();
 		
-	
-	
+		//\Application::ConsoleLog($this);
+		
 		
 		\Application::Debug($this);
 		

@@ -21,6 +21,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */
 	public $AcceptTypes;
+        
 	/**
 	 * Gets the php application's virtual application root path on the server.
 	 *
@@ -28,6 +29,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $ApplicationPath;
+        
 	/**
 	 * Gets or sets information about the requesting client's browser capabilities.
 	 *
@@ -35,6 +37,13 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */
 	public $Browser;
+        
+        /**
+         * 
+         * @var $CacheControl
+         */
+	public $CacheControl;
+        
 	/**
 	 * This is variable ContentEncoding description
 	 *
@@ -42,6 +51,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $ContentEncoding;
+        
 	/**
 	 * This is variable ContentLength description
 	 *
@@ -49,6 +59,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $ContentLength;
+        
 	/**
 	 * This is variable ContentType description
 	 *
@@ -56,13 +67,15 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $ContentType;
+        
 	/**
 	 * This is variable Context description
 	 *
 	 * @var mixed 
 	 *
 	 */	
-	public $Context;	
+	public $Context;
+        
 	/**
 	 * Gets a collection of cookies sent by the client.
 	 * 
@@ -75,7 +88,8 @@ class HttpRequest  implements IHttpRequest
 	 * @var Cookie;
 	 *
 	 */	
-	public $Cookies; //= HttpCookieCollection::HttpCookieCollection;
+	public $Cookies;
+
 	/**
 	 * This is variable CurrentExecutionFilePath description
 	 *
@@ -83,6 +97,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $CurrentExecutionFilePath;
+        
 	/**
 	 * This is variable FilePath description
 	 *
@@ -90,6 +105,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $FilePath;
+        
 	/**
 	 * This is variable Files description
 	 *
@@ -97,6 +113,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Files;
+        
 	/**
 	 * This is variable Filter description
 	 *
@@ -104,6 +121,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Filter;
+        
 	/**
 	 * This is variable Form description
 	 *
@@ -111,6 +129,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Form;
+        
 	/**
 	 * This is variable Headers description
 	 *
@@ -118,6 +137,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Headers;
+        
 	/**
 	 * This is variable HttpMethod description
 	 *
@@ -125,6 +145,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $HttpMethod;
+        
 	/**
 	 * This is variable Item description
 	 *
@@ -132,6 +153,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Item;
+        
 	/**
 	 * This is variable isAjax description
 	 *
@@ -147,6 +169,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Params;
+        
 	/**
 	 * This is variable Path description
 	 *
@@ -154,6 +177,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Path;
+        
 	/**
 	 * This is variable PhysicalApplicationPath description
 	 *
@@ -161,6 +185,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $PhysicalApplicationPath;
+        
 	/**
 	 * This is variable PhysicalPath description
 	 *
@@ -168,6 +193,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $PhysicalPath;
+        
 	/**
 	 * This is variable QueryString description
 	 *
@@ -175,6 +201,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $QueryString = array();
+        
 	/**
 	 * This is variable RawUrl description
 	 *
@@ -182,6 +209,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $RawUrl;
+        
 	/**
 	 * This is variable Request description
 	 *
@@ -196,6 +224,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $RequestType;
+        
 	/**
 	 * This is variable ServerVariables description
 	 *
@@ -203,6 +232,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $ServerVariables;
+        
 	/**
 	 * This is variable Url description
 	 *
@@ -210,6 +240,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $Url;
+        
 	/**
 	 * This is variable UrlReferrer description
 	 *
@@ -217,6 +248,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $UrlReferrer;
+        
 	/**
 	 * This is variable UserAgent description
 	 *
@@ -224,6 +256,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $UserAgent;
+        
 	/**
 	 * This is variable UserHostAdress description
 	 *
@@ -231,6 +264,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $UserHostAdress;
+        
 	/**
 	 * This is variable UserHostName description
 	 *
@@ -238,6 +272,7 @@ class HttpRequest  implements IHttpRequest
 	 *
 	 */	
 	public $UserHostName;
+        
 	/**
 	 * This is variable UserLanguages description
 	 *
@@ -246,11 +281,15 @@ class HttpRequest  implements IHttpRequest
 	 */	
 	public $UserLanguages;
 	
-	
+	/**
+         * Description
+         * @var $Contents
+         * @property $Contents;
+         */
 	public $Contents;
     
     
-    public $IP;
+        public $IP;
 	
 
 	
@@ -270,10 +309,10 @@ class HttpRequest  implements IHttpRequest
 		
 		$this->EnsureCookies();
 		
-		$this->AcceptTypes  =   null;
+		//$this->AcceptTypes  =   null;
 		$this->Contents     =   null;
-		$this->HttpMethod	=   $method;
-		$this->Url			=	new Uri($uri);
+		$this->HttpMethod   =   $method;
+		$this->Url          =	new Uri($uri);
 		$this->ContentLength = -1;
 		$this->_wr          = null;
 		//$this->QueryString  = new HttpValueCollection($queryString);
@@ -281,11 +320,7 @@ class HttpRequest  implements IHttpRequest
 		
 		return $this;
 	}
-	
-	
-	
 
-	
 	/**
 	 * HttpRequest::GetParams()
 	 * 
@@ -312,6 +347,7 @@ class HttpRequest  implements IHttpRequest
 		$this->Params->Add($this->ServerVariables);
 		
 	}
+        
 	/** 
 	 * HttpRequest::FillInServerVariablesCollection()
 	 *
@@ -322,55 +358,57 @@ class HttpRequest  implements IHttpRequest
 		{
 			foreach($_SERVER  as $name => $value)
 			{
-				//\Application::ConsoleLog($name."=".$value);
 				switch($name)
 				{
 					case 'REDIRECT_STATUS':
-						break;
+					    break;
 					case 'HTTP_HOST':
 						$this->UserHostName = $value;
-						break;
+					    break;
 					case 'HTTP_CONNECTION':
-						break;
+					    break;
 					case 'HTTP_CACHE_CONTROL':
-						break;
+						$this->CacheControl = $value;
+					    break;
 					case 'HTTP_ACCEPT':
 						$this->AcceptTypes = $value;
-						
-						break;
+					    break;
 					case 'HTTP_USER_AGENT':
 						$this->UserAgent = $value;
-						break;
-                    case 'HTTP_REFERER':
-                        $this->UserHostAdress = $value;
-                        break;
-                    case 'HTTP_ACCEPT_ENCODING':
-                        $this->ContentEncoding = $value;
-                        break;
-                    case 'HTTP_ACCEPT_LANGUAGE':
-                        $this->UserLanguages = $value;
-                        break;
-                    case 'PATH':
-                        $value = null;
-                        break;
-                    case 'SERVER_ADDR':
-                        $this->IP = $value;
-                        break;
-                    case 'SERVER_PORT':
-                        break;
-                    case 'DOCUMENT_ROOT':
-                        $this->ApplicationPath = $value;
-                    break;
-                    case 'REQUEST_METHOD':
-                        $this->HttpMethod = $value;
-                        break;
-                    case 'QUERY_STRING':
-                        $this->QueryString = $value;
-                        $this->QueryStringParams = null;
-                        break;
-                    case 'REQUEST_URI':
-                        $this->Path =	filter_var( $value, FILTER_SANITIZE_STRING ,FILTER_FLAG_STRIP_HIGH);
-                        break;
+                                                $this->Browser = $value;
+                                            break;
+                                        case 'HTTP_REFERER':
+                                            $this->UserHostAdress = $value;
+                                            break;
+                                        case 'HTTP_ACCEPT_ENCODING':
+                                            $this->ContentEncoding = $value;
+                                            break;
+                                        case 'HTTP_ACCEPT_LANGUAGE':
+                                            $this->UserLanguages = $value;
+                                            break;
+                                        case 'PATH':
+                                            $value = null;
+                                            //$this->Path = dirname(realpath(__FILE__));
+                                            break;
+                                        case 'SERVER_ADDR':
+                                            $this->IP = $value;
+                                            break;
+                                        case 'SERVER_PORT':
+                                            
+                                            break;
+                                        case 'DOCUMENT_ROOT':
+                                            $this->ApplicationPath = $value.DIRECTORY_SEPARATOR.'Application'.DIRECTORY_SEPARATOR;
+                                        break;
+                                        case 'REQUEST_METHOD':
+                                            $this->HttpMethod = $value;
+                                            break;
+                                        case 'QUERY_STRING':
+                                            $this->QueryString = $value;
+                                            $this->QueryStringParams = null;
+                                            break;
+                                        case 'REQUEST_URI':
+                                            $this->Path =	filter_var( $value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+                                            break;
                     
 				}
 				$this->AddServerVariableToCollection(strtolower( $name ),$value);
@@ -658,16 +696,15 @@ class HttpRequest  implements IHttpRequest
 	
 	public function SendRequest(){
 		
-		$context = stream_context_create(array
-			(
-					'http' => array(
-						'method' => $this->HttpMethod,
-						'header' => $this->Headers,
-						'content' => http_build_query( $this->QueryString )
-						)
-					));
+		$context = stream_context_create(array ('http' => array(
+                                                                'method' => $this->HttpMethod,
+                                                                'header' => $this->Headers,
+                                                                'content' => http_build_query( $this->QueryString )
+                                                                )
+                                                        )
+                                                );
 		
-		$this->Contents =	 file_get_contents($this->Url, false, $context);
+		$this->Contents =   file_get_contents($this->Url, false, $context);
 		return $this->Contents; 
 	}
 	
@@ -762,29 +799,30 @@ class HttpRequest  implements IHttpRequest
 			foreach ($this->Cookies as $cookie)
 			{
                            
-                if($cookie instanceof HttpCookie){
-
-				    setcookie($cookie->name, $cookie->value, $cookie->expires, $cookie->path, $cookie->domain, $cookie->secure, $cookie->hostonly);
-			        
-                }else
-                {
-                    $array = $cookie->getArrayCopy();
-                    $_cookie = $array[1];
-
-                    setcookie($_cookie->name, $_cookie->value, $_cookie->expires, $_cookie->path,$_cookie->domain, $_cookie->secure,$_cookie->hostonly);
-                    
-                }
-            }
+                            if($cookie instanceof HttpCookie){
+            
+                                setcookie($cookie->name, $cookie->value, $cookie->expires, $cookie->path, $cookie->domain, $cookie->secure, $cookie->hostonly);
+                                            
+                            }else
+                            {
+                                $array = $cookie->getArrayCopy();
+                                $_cookie = $array[1];
+            
+                                setcookie($_cookie->name, $_cookie->value, $_cookie->expires, $_cookie->path,$_cookie->domain, $_cookie->secure,$_cookie->hostonly);
+                                
+                            }
+                        }
 			
 		}
-        return $this;
+            
+            return $this;
 		
 	}
 	
 	public function SendBody()
 	{
 		echo (string)  $this->Contents;
-        return $this;
+                return $this;
 	}
 	
 	public function ValidateHttpValueCollection(HttpValueCollection $collection)

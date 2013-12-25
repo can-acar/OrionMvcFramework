@@ -1,0 +1,81 @@
+[Sun Dec 15 22:31:26 2013] [notice] Digest: generating secret for digest authentication ...
+[Sun Dec 15 22:31:26 2013] [notice] Digest: done
+[Sun Dec 15 22:31:26 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Sun Dec 15 22:31:46 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:32:04 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:32:16 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:32:33 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:32:39 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:32:40 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:32:47 2013] [error] [client ::1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:33:13 2013] [error] [client 127.0.0.1] File does not exist: /Applications/MAMP/htdocs/favicon.ico
+[Sun Dec 15 22:34:41 2013] [notice] caught SIGTERM, shutting down
+[Sun Dec 15 23:42:47 2013] [notice] Digest: generating secret for digest authentication ...
+[Sun Dec 15 23:42:47 2013] [notice] Digest: done
+[Sun Dec 15 23:42:47 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Sun Dec 15 23:45:31 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/adm.html, referer: http://cpro.baidu.com/cpro/ui/uijs.php?rs=0&tu=u1362531&tn=baiduCustSTagLinkUnit&n=aold_cpr&adn=1&rsi1=80&rsi0=1024&rad=&rss0=&rss1=&conOP=0&rss2=&rss3=&rss4=&rss5=&rss6=&rsi5=4&ts=1&at=103&ch=0&cad=0&aurl=http%3A%2F%2Fwww.newhua.com&rss7=&cpa=1&fv=11&cn=1&if=16&word=http%3A%2F%2Fwww.onlinedown.net%2Fsoft%2F175442.htm&refer=https%3A%2F%2Fwww.google.com.tr%2F&ready=1&jk=3b8d9674ffe450f3&jn=3&lmt=1384213790&csp=1440,900&csn=1440,824&ccd=24&chi=1&cja=true&cpl=8&cmi=64&cce=true&csl=tr&did=1&rt=8&dt=1387143930&ev=16777216&c01=0&prt=1387143928500&i3=f&anatp=0&stid=5&distp=1001&lunum=6&scale=&skin=tabcloud_skin_1
+[Sun Dec 15 23:49:33 2013] [error] [client ::1] File does not exist: /Applications/www/favicon.ico
+[Sun Dec 15 23:49:53 2013] [error] [client ::1] File does not exist: /Applications/www/favicon.ico
+[Mon Dec 16 01:17:32 2013] [notice] caught SIGTERM, shutting down
+[Mon Dec 16 21:19:47 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Dec 16 21:19:47 2013] [notice] Digest: done
+[Mon Dec 16 21:19:48 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Mon Dec 16 21:21:51 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Mon Dec 16 21:21:53 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/
+[Mon Dec 16 21:58:40 2013] [notice] caught SIGTERM, shutting down
+[Mon Dec 16 22:01:09 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Dec 16 22:01:09 2013] [notice] Digest: done
+[Mon Dec 16 22:01:10 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Mon Dec 16 22:01:40 2013] [error] [client ::1] File does not exist: /Applications/www/favicon.ico
+[Mon Dec 16 22:10:24 2013] [notice] caught SIGTERM, shutting down
+[Mon Dec 16 22:15:04 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Dec 16 22:15:04 2013] [notice] Digest: done
+[Mon Dec 16 22:15:05 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Mon Dec 16 22:41:59 2013] [notice] caught SIGTERM, shutting down
+[Wed Dec 18 00:02:01 2013] [notice] Digest: generating secret for digest authentication ...
+[Wed Dec 18 00:02:01 2013] [notice] Digest: done
+[Wed Dec 18 00:02:02 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Wed Dec 18 00:02:46 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/
+[Wed Dec 18 00:02:46 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Wed Dec 18 00:02:53 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/
+[Wed Dec 18 00:07:57 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/
+[Wed Dec 18 00:08:00 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about
+[Wed Dec 18 00:09:17 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about
+[Wed Dec 18 00:09:30 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/
+[Wed Dec 18 00:09:46 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/
+[Wed Dec 18 00:23:13 2013] [notice] caught SIGTERM, shutting down
+[Wed Dec 18 10:20:28 2013] [notice] Digest: generating secret for digest authentication ...
+[Wed Dec 18 10:20:28 2013] [notice] Digest: done
+[Wed Dec 18 10:20:29 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Wed Dec 18 10:21:11 2013] [error] [client ::1] File does not exist: /Applications/www/favicon.ico
+[Wed Dec 18 10:21:21 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Wed Dec 18 15:35:24 2013] [notice] caught SIGTERM, shutting down
+[Wed Dec 18 20:51:44 2013] [notice] Digest: generating secret for digest authentication ...
+[Wed Dec 18 20:51:44 2013] [notice] Digest: done
+[Wed Dec 18 20:51:45 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Wed Dec 18 20:53:11 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Wed Dec 18 22:51:54 2013] [error] [client ::1] File does not exist: /Applications/www/favicon.ico
+[Wed Dec 18 23:39:21 2013] [notice] caught SIGTERM, shutting down
+[Fri Dec 20 19:28:35 2013] [notice] Digest: generating secret for digest authentication ...
+[Fri Dec 20 19:28:35 2013] [notice] Digest: done
+[Fri Dec 20 19:28:36 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Fri Dec 20 19:29:32 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Fri Dec 20 19:29:32 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Fri Dec 20 20:27:49 2013] [notice] caught SIGTERM, shutting down
+[Sat Dec 21 01:05:14 2013] [notice] Digest: generating secret for digest authentication ...
+[Sat Dec 21 01:05:14 2013] [notice] Digest: done
+[Sat Dec 21 01:05:15 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Sat Dec 21 01:05:17 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Sat Dec 21 01:48:46 2013] [notice] caught SIGTERM, shutting down
+[Wed Dec 25 10:19:41 2013] [notice] Digest: generating secret for digest authentication ...
+[Wed Dec 25 10:19:41 2013] [notice] Digest: done
+[Wed Dec 25 10:19:42 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Wed Dec 25 10:24:26 2013] [notice] caught SIGTERM, shutting down
+[Wed Dec 25 10:24:33 2013] [notice] Digest: generating secret for digest authentication ...
+[Wed Dec 25 10:24:33 2013] [notice] Digest: done
+[Wed Dec 25 10:24:34 2013] [notice] Apache/2.2.25 (Unix) mod_ssl/2.2.25 OpenSSL/0.9.8y DAV/2 PHP/5.5.3 configured -- resuming normal operations
+[Wed Dec 25 10:25:20 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/favicon.ico
+[Wed Dec 25 10:25:36 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about
+[Wed Dec 25 10:25:39 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about
+[Wed Dec 25 13:50:24 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/download, referer: http://local.orionframework.net/?deneme=test
+[Wed Dec 25 13:50:29 2013] [error] [client 127.0.0.1] File does not exist: /Applications/www/about, referer: http://local.orionframework.net/?deneme=test

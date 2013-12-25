@@ -47,7 +47,7 @@ class Dispatcher
 			//$App->Event->Dispatch->onActionExecuted(array($Context,$RouteMeta));			
 		}catch(Exception $e)
 		{
-			OrionException::Handler(new Exception\ErrorException("Application Dispatch Error!"));
+			throw	OrionException::Handler(new Exception\ErrorException("Application Dispatch Error!"));
 			return FALSE;
 		}
 	}

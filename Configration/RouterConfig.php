@@ -7,7 +7,8 @@ use OrionMvc;
 //TODO: eğer ? den sonra bir parametre girilip QueryStringParametresi olarak tanımlanırsa query parametresini  yakalar.
 //{:controller{/:action{/:id{/:text}}}}
 //'(:controller(/:action(/:id(/:text))))',
-class RouterConfig{
+class RouterConfig
+{
 	
 	
 	
