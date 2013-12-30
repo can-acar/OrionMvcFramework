@@ -1,55 +1,56 @@
 <?php
-namespace OrionMvc;
-/**
- * class RouterCollection
- *
- * Description for class RouterCollection
- *
- * @author:
-*/
-class RouterCollection extends \ArrayObject  {
-	
-	
+	namespace OrionMvc;
 	/**
-	 * This is variable Collection description
+	 * class RouterCollection
 	 *
-	 * @var $Collection Array; 
+	 * Description for class RouterCollection
 	 *
-	 */
-	//protected $Collection = array();
-	/**
-	 * RouterCollection constructor
-	 *
-	 * @param 
-	 */
-	public function __construct() {
-		return $this;
-	}
-
-
-	public function Add($Key,$Value)
-	{
-		$this[$Key]=($Value);
+	 * @author:
+	*/
+	class RouterCollection extends \ArrayObject  {
 		
-		return $this;
-	}
-
-	public function Get()
-	{
-		return $this->getIterator();
-	}
-
-	
-	public function GetController($Default)
-	{
-		if(in_array($Default,$this)==true)
-		{
-			return	$this[$Default]->controller;	
+		
+		/**
+		 * This is variable Collection description
+		 *
+		 * @var $Collection Array; 
+		 *
+		 */
+		//protected $Collection = array();
+		/**
+		 * RouterCollection constructor
+		 *
+		 * @param 
+		 */
+		public function __construct(){
+			parent::__construct(array(), \ArrayObject::STD_PROP_LIST	);
+			
 		}
 
 
-	}
+		public function Add($Key,$Value)
+		{
+			$this[$Key]=($Value);
+			
+			return $this;
+		}
 
-}
+		public function Get()
+		{
+			return $this->getIterator();
+		}
+
+		
+		public function GetController($Default)
+		{
+			if(in_array($Default,$this)==true)
+			{
+				return	$this[$Default]->controller;	
+			}
+
+
+		}
+
+	}
 
 ?>

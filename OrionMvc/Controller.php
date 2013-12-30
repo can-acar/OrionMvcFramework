@@ -44,12 +44,10 @@ abstract class Controller extends AbstractController implements IController  {
 		$_Action = $this->FindAction($ActionName);
 		$ActionName = $this->Name;
 		$Controller = $RouteMeta->Controller;
-		//$this->ActionExecuting($_Action);
-		//Todo: InvokeActionFilter($_Action);
+
 		$InvokeActionFilter = new InvokeActionFilter($_Action);
 		$this->InvokeAction($_Action);
-		//echo($_Action->getDocComment());
-		//$this->ActionExecuted($_Action);
+
 		
 		if (!is_null($ActionName)) {
 			$ActionName = $this->ViewName;
@@ -89,7 +87,7 @@ abstract class Controller extends AbstractController implements IController  {
 	public function InvokeAction($_Action)
 	{
 		$GetParams = $_Action->getParameters();
-		//var_dump($_Action);		
+
 		$_Action->invokeArgs($this,array());
 		
 	}

@@ -111,7 +111,7 @@ class Router extends AbstractRouter implements IRouter{
 			{
 
 				$this->RouteMeta->{$key} = $value;
-				//$this->RouteMeta->Route->{$key} = $value;		
+				
 			}
 					
 			if($isMatched == true)
