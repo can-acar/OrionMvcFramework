@@ -10,8 +10,8 @@ class NameValueCollection  extends NameObjectCollection
 	public function __construct(array $data = null)
 	{
 
-		parent::__construct($this,\ArrayObject::ARRAY_AS_PROPS);
-		return $this;
+		parent::__construct(array(),\ArrayObject::ARRAY_AS_PROPS);
+
 	}
 	
 	public function Each($Callback)

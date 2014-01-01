@@ -23,6 +23,7 @@
 		 * @param 
 		 */
 		public function __construct(){
+			
 			parent::__construct(array(), \ArrayObject::STD_PROP_LIST	);
 			
 		}
@@ -30,9 +31,9 @@
 
 		public function Add($Key,$Value)
 		{
-			$this[$Key]=($Value);
-			
-			return $this;
+
+			$this->offsetSet($Key,$Value);
+
 		}
 
 		public function Get()
@@ -43,13 +44,11 @@
 		
 		public function GetController($Default)
 		{
-			if(in_array($Default,$this)==true)
-			{
-				return	$this[$Default]->controller;	
-			}
-
-
+			$_Default = $this->offsetGet($Default);
+			return $_Default;
 		}
+
+
 
 	}
 

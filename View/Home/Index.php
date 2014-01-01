@@ -27,8 +27,7 @@
 		<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<link rel="stylesheet" type="text/css" href="http://static.gavick.com/templates/gk_homepage/css/ie8.css" />
 		<![endif]-->
-		<script src="//code.jquery.com/jquery.js" type="text/javascript"></script>
-		<script src="../Theme/js/bootstrap.min.js" type="text/javascript"></script>
+	
 </head>
 
 <body>
@@ -54,17 +53,12 @@
 					<a href="" class="dropdown-toggle" data-toggle="dropdown">Documentation<b class="caret"></b></a>
 					
 					<ul class="dropdown-menu">
-					    <li><a href="#">Action</a></li>
-
-					    <li><a href="#">Another action</a></li>
-
-					    <li><a href="#">Something else here</a></li>
-
-					    <li class="dropdown-header">Nav header</li>
-
-					    <li><a href="#">Separated link</a></li>
-
-					    <li><a href="#">One more separated link</a></li>
+					    <li><a href="#">Installation</a></li>
+					    <li><a href="#">Configration</a></li>
+						<li><a href="#">Model</a></li>
+						<li><a href="#">Modul</a></li>
+						<li><a href="#">Dispathcer</a></li>
+						<li><a href="#">Controller</a></li>
 					</ul>
 				    </li>
 				</ul>
@@ -77,7 +71,12 @@
 		    <div class="page-wrapper clearfix">
 			<div class="">
 			    <div class="top-container clearfix">
-				<div class="inner clearfix">
+				<div class="row-fluid clearfix">
+					<div class="highlight">
+												<?php        echo $Message        ?>
+											</div>
+				</div>
+<!--				<div class="inner clearfix">
 				    <h1>{{@Title }}</h1>
 
 				    <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
@@ -152,7 +151,7 @@
 											</div>
 											</div>
 										</div>
-									</div>
+									</div>-->
 			    </div>
 			</div>
 		    </div>
@@ -167,6 +166,7 @@
 	    </div>
 	</div>
     </div>
-
+	<script src="//code.jquery.com/jquery.js" type="text/javascript"></script>
+	<script src="../Theme/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

@@ -56,6 +56,9 @@ class InvokeActionFilter extends \ArrayObject
 		return '';
 	}
 
+	public function Invoke(){
+	}
+
 
 }
 ?>

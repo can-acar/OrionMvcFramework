@@ -22,18 +22,29 @@
 					["text"=>'([a-zA-Z_-]+)',
 						"query"=>OrionMvc\Router::QUERY_STRING_PARAMS]);
 			
-			OrionMvc\Router::Connect('about','/about',
+			OrionMvc\Router::Connect('about','about',
 				['controller'=>'Home',
 						'action'=>'About']);
 
 
 			/*OrionMvc\Router::Connect('default2','/?{query}',
 				['controller'=>'Home',
-						'action'=>'Index'],
+						'action'=>'Query'],
 					['query'=>OrionMvc\Router::QUERY_STRING_PARAMS]);*/
+
+			OrionMvc\Router::Connect('default1','{controller}/{id}',
+				['controller'=>'Home',
+					'action'=>'Index'],
+					['id'=>'\d+']);
+
 			
-			
-			OrionMvc\Router::Connect('default','{controller}/{action}/{content}/{id}',
+			OrionMvc\Router::Connect('default2','{controller}/{action}/{id}',
+				['controller'=>'Home',
+						'action'=>'Index'],
+					['id'=>'\d+',
+						'text'=>'([a-zA-Z]+)']);
+
+			OrionMvc\Router::Connect('default3','{controller}/{action}/{content}/{id}',
 				['controller'=>'Home',
 						'action'=>'Index'],
 					['id'=>'\d+',

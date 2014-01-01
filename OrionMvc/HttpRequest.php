@@ -1196,7 +1196,7 @@
 		 */
 		public function setHeaders($Headers)
 		{
-			$this->Headers = $Headers;
+			$this->Headers->SetHeader($Headers);
 
 			return $this;
 		}

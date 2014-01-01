@@ -131,7 +131,7 @@ class HttpResponse {
 		
 		$this->Headers		=	new HttpHeaderCollection(null,$this); 
 		
-		$this->Cookies      =   new  HttpCookieCollection($this,false);
+		$this->Cookies      =   new HttpCookieCollection($this,false);
         
         
         $this->Headers->Add("content-type","text/html; charset=utf-8");
@@ -155,11 +155,12 @@ class HttpResponse {
 	{
 		if(strpos($Url, '://') === FALSE)
 		{
-			$url = site_url($Url);
+			$url = new Uri($Url);
 		}
 		
-		$this->Context->Request->SetHeader('Refresh',$Method == 'refresh' ? "Refresh:0;url = $Url" : "Location: $Url");
-		header($Method == 'refresh' ? "Refresh:0;url = $Url" : "Location: $Url", TRUE, $Code);
+		$this->Context->Request->Headers->SetHeader('Refresh',$Method == 'refresh' ? "Refresh:0;url = $Url" : "Location: $Url");
+		$this->Context->Request->SendHeaders();
+		//header($Method == 'refresh' ? "Refresh:0;url = $Url" : "Location: $Url", TRUE, $Code);
 	}
 	
 	public function SetCookie(HttpCookie $Cookie)
