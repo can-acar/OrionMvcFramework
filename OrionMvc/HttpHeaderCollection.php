@@ -35,20 +35,30 @@
 			return $this;
 			
 		}
-		
+        
+		/**
+		 * Summary of HttpRequest
+		 * @param OrionMvc\HttpRequest $request 
+		 */
 		function HttpRequest(HttpRequest $request)
 		{
 			$this->Request = $request;
 		}
-		
+        
+		/**
+		 * Summary of HttpResponse
+		 * @param OrionMvc\HttpResponse $response 
+		 */
 		function HttpResponse(HttpResponse $response)
 		{
 			$this->Response = $response;
 		}
-
 		
-		
-		
+		/**
+		 * Summary of Add
+		 * @param mixed $name 
+		 * @param mixed $value 
+		 */
 		function Add($name,$value)
 		{
 			$this->SetHeader($name,$value,false);

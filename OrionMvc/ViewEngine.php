@@ -12,11 +12,11 @@ class ViewEngine  {
 	/**
 	 * ViewEngine constructor
 	 *
-	 * @param 
-	 */
-	function ViewEngine() {
-
-	}
+     * @param 
+     */
+	public function __construct()
+    {
+    }
 }
 
 ?>

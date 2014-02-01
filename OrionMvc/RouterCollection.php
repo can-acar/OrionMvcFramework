@@ -48,7 +48,10 @@
 			return $_Default;
 		}
 
-
+        public function __toString()
+        {
+            return "RouterCollection";
+        }
 
 	}
 

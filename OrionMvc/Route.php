@@ -118,30 +118,32 @@
 		
 		private	function parseUrlTagsRecursive(array $input = null)
 		{
+            
+            if(isset($this->Rule[$input[1]])== true)
+            {
+                
+                return  sprintf("(?:(?P<%s>%s))",$input[1],$this->Rule[$input[1]]);
+                
+            }
+            
+            return  sprintf("(?:(?P<%s>[^/]*))",$input[1]);
 			
-			if(isset($this->Rule[$input[1]])== true)
-			{
-				
-				return  sprintf("(?:(?P<%s>%s))",$input[1],$this->Rule[$input[1]]);
-				
-			}
-			
-			return  sprintf("(?:(?P<%s>[^/]*))",$input[1]);
 			
 		}
 
 		public function getUrlSchema()
 		{
 
-			$regex = "#\{(.*?)({(.*?))?\}#";//"#{((?:[^{]|\[(?!/?}])|(?R))+)\}#";
+			$regex = '#\{(.+?)\}#';//"#\{(.*?)({(.*?))?\}#";//'#\{(.+?)\}#';////"#{((?:[^{]|\[(?!/?}])|(?R))+)\}#";
 			
-			$expression = str_replace("/","/?",$this->Path); //str_replace(['/','/{'],[')?/(','/{'] ,$this->Path);
-			
-			$expression = preg_replace_callback($regex, array($this,'parseUrlTagsRecursive'), $expression);
+            $expression = str_replace("/","/?",$this->Path); //str_replace(['/','/{'],[')?/(','/{'] ,$this->Path);
+            
+            $expression = preg_replace_callback($regex, array($this,'parseUrlTagsRecursive'), $expression);
 
-			$expression = '#('.$expression.'?)#';
+            $expression = '#('.$expression.'?)#';
 
-			return $expression;
+            return $expression;
+
 		}
 		
 

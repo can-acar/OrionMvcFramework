@@ -54,12 +54,9 @@ class NameValueCollection  extends NameObjectCollection
 	}
 	
 	/**
-	 * This is method AddCollection
-	 *
-	 * @param NameValueCollection $Collection This is a description
-	 * @return mixed This is the return value description
-	 *
-	 */	
+	 * Summary of AddCollection
+	 * @param OrionMvc\NameValueCollection $Collection 
+	 */
 	public function AddCollection(NameValueCollection $Collection)
 	{
 		if($Collection == null)

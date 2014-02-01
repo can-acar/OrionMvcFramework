@@ -12,25 +12,39 @@ class InvokeActionFilter extends \ArrayObject
 	{
 		$this->Controller = $Action->class;
 		$this->Action = $Action->name;
+		
 
 		$contents = file_get_contents($Action->getFileName(),null,null,$Action->getStartLine());
-		$attribute;
+		//\Application::Debug($Action);
+		/*$attribute;
 		foreach ($this->Attribute as $i=>$key) {
 			$str_arr = $this->ParseAttribute($key, $contents  );
 			//$attribute[$key] = Ar
 			
-			//var_dump($key,$str_arr );
+			\Application::Debug($key,$str_arr );
 
+		}*/
+		$_row = explode(  "\n",$contents );
+		
+		//\Application::Debug($_row[$Action->getStartLine()-4],$this);
+		
+		
+		$file = new \SplFileObject($Action->getFileName());
+		
+		 foreach ($file as $line) 
+		 {
+		     
+			//\Application::Debug(  $Action->getStartLine(),$_row);
 		}
-
 
 	}
 
 	private	function ParseAttribute($Filter,$content)
 	{
 		$matches = array();
-		$regex = "/(?P<$Filter>#$Filter#[\s\n]+(\S+)[\s\n]*(?:[^\s\n])+(?:[^function])function[\s\n]+(\S+)[\s\n]*\((.*)\))/im";
+		$regex = "/(?P<$Filter>\#$Filter\#[\s\n]+(\S+)[\s\n]*(?:[^\s\n])+(?:[^function])function[\s\n]+(\S+)[\s\n]*\((.*)\))/im";
 		//$regex = "/(#((?:$Filter)*)#[\s\n]+(\S+)[\s\n]*(?:[^\s\n])+(?:[^function])+function[\s\n]+(\S+)[\s\n]*\((.*)\))/mi";
+		\Application::ConsoleLog("$regex");
 		preg_match_all($regex, $content, $matches);
 		return $matches;
 	}

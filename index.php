@@ -11,19 +11,16 @@ require_once(ABSPATH."Configration".DIRECTORY_SEPARATOR."Config.php");
 
 require_once(ABSPATH.'Application.php');
 
-$Load = new OrionMvc\Autoloader();
+$Load      = new OrionMvc\Autoloader();
 
 $Exception = OrionMvc\OrionException::Instance();
 
 $Exception->Register();
 
-$App = \Application::GetInstance();
+$App       = \Application::GetInstance();
 
-$Context = new OrionMvc\HttpContext(new OrionMvc\HttpRequest,new OrionMvc\HttpResponse ); // listen server
 
-$App->Configration = new Configration\Config($App);
-
-$App->Dispatcher->Dispatch($Context,$App);
+$App->Dispatcher->Dispatch($App->Context,$App);
 
 
 

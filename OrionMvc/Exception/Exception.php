@@ -8,6 +8,8 @@ namespace OrionMvc\Exception;
  *
  * @author:
 */
- class  Exception  extends \Exception {}
+ class  Exception  extends \Exception {
+ 	
+ }
 
 ?>

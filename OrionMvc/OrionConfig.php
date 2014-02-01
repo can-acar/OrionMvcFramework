@@ -46,12 +46,31 @@ class OrionConfig  extends \ArrayObject  implements IOrionConfig{
 	{
 		$this->offsetSet($Key,$Value);
 	}
-	
+	/**
+	 * Summary of __ToString
+	 * @return mixed
+	 */
 	public function __ToString()
 	{
 		return 'Array';
 	}
-	
+    
+    /**
+     * Summary of getConfig
+     * @param mixed $getConfigName 
+     */
+    public function getConfig($getConfigName )
+    {
+        
+    }
+    /**
+     * Summary of setConfig
+     * @param array $config 
+     */
+    public function setConfig(array $config = array())
+    {
+        
+    }
 	
 }
 

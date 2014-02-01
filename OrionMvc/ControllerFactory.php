@@ -71,6 +71,7 @@
 			{
 				foreach ($GetMatchFiles as $File)
 				{
+                    
 					$collection = explode(DIRECTORY_SEPARATOR,$File->getPath());
 					$findIndex = array_search($Controller,$collection );
 					$split = array_slice($collection,($findIndex-1));

@@ -32,27 +32,21 @@ class HttpContext  implements IHttpContext
 	 */	
 	public $Session;
 	
-	/**
-	 * This is variable Handler description
-	 *
-	 * @var mixed 
-	 *
-	 */	
-	public $ErrorHandler;
+
 	
 	/**
-	 * This is method __construct
-	 *
-	 * @param HttpRequest $request This is a description
-	 * @param HttpResponse $response This is a description
-	 * @return mixed This is the return value description
-	 *
-	 */	
-	public function __construct(HttpRequest $request,HttpResponse $response)
+	 * Summary of __construct
+	 * @param OrionMvc\HttpRequest $request 
+	 * @param OrionMvc\HttpResponse $response 
+	 * @param mixed $Session 
+	 * @return mixed
+	 */
+	public function __construct(HttpRequest $request,HttpResponse $response,$Session = null)
 	{
 		$this->Init($request,$response);
 		$request->Context = $this;
 		$response->Context = $this;
+		$this->Session = $Session;
 		return $this;
 	}
 	
@@ -68,40 +62,12 @@ class HttpContext  implements IHttpContext
 	{
 		$this->Request  = $request;
 		$this->Response = $response;
-		$this->Session	= \Application::$Instance->Session;
 		$this->Request->Context = $this;
 		$this->Response->Context = $this; 
 		return $this;
 	}
 	
-	/**
-	 * This is method ErrorHandler
-	 *
-	 * @param mixed $Handler This is a description
-	 * @return mixed This is the return value description
-	 *
-	 */	
-	public function ErrorHandler($Handler = null)
-	{
-		$this->ErrorHandler = $Handler;
-		return $this;
-	}
-	
-	
-	
-	/*	public function __get($key)
-		{
-			switch($key)
-			{
-				case "ContentType":
-					return	$this->Request->{$key};
-					break;
-				case "Session":
-					return $this->Session->{$key};
-					break;
-			}
-			
-		}*/
+
 	
 }
 

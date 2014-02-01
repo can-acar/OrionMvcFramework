@@ -13,9 +13,9 @@ class HomeController extends OrionMvc\Controller {
 	
 	
 	
-	public function Index($id = null)
+	public function Index()
 	{               
-		$this->Message = "Orion Mvc Framework v1.0 ®".$id;
+		$this->Message = "Orion Mvc Framework v1.0 ®";
 		//$UserLogon = new UserLogon\UserLogonModel();
 		//$db = new OrionMvc\Database();
 		//$this->Session->{"Test"} = "test session";
@@ -58,9 +58,12 @@ class HomeController extends OrionMvc\Controller {
 		
 		//\Application::ConsoleLog($this);
 		//$this->Response->Redirect("//www.google.com", $Code = 302, $Method = 'location');
-
+		//\Application::ConsoleLog($_SERVER['query_string']);
 		$_controller = OrionMvc\Router::$RouterCollection;//->GetController('default');
 			//\Application::Debug($this->Response);
+        
+        \Application::$Instance->Request->Headers->Add("X-Title","Orion X Title");
+        
 		
 		
 	}
@@ -71,9 +74,9 @@ class HomeController extends OrionMvc\Controller {
 	 */
 
 
-	public function About()
+	public function About($id = null)
 	{
-			$this->ViewName = "Index";
+			
 			$this->Message = "About";
 	}
 
@@ -94,7 +97,8 @@ class HomeController extends OrionMvc\Controller {
 	#HttpGet#
 	public function Query($query)
 	{
-
+			$this->ViewName = "Index";
+			$this->Message =$query;    
 	}
 	
 	public function ActionExecuted(array $Context=null)
